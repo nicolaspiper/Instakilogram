@@ -1,25 +1,28 @@
+const path = require('path');
+
 module.exports = {
-    entry: "./frontend/instakilogram.jsx",
+    context: __dirname,
+    entry: './frontend/instakilogram.jsx',
     output: {
-        path: path.resolve(__dirname,'app', 'assets', 'javascripts'),
-        filename: "./bundle.js"
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+        filename: 'bundle.js'
     },
-    devtool: "inline-source-map",
     module: {
         rules: [
             {
-                test: /\.jsx?/,
-                execute: /(node_modules)/,
+                test: /\.jsx?$/,
+                exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
                     query: {
                         presets: ['@babel/env', '@babel/react']
                     }
-                }
+                },
             }
         ]
     },
+    devtool: 'source-map',
     resolve: {
-        extensions: ['.js','.jsx','*']
+        extensions: [".js", ".jsx", "*"]
     }
-}
+};
