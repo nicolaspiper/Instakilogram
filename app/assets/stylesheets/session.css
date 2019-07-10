@@ -1,0 +1,50 @@
+.session-form-box{
+    background-color: #fff;
+    border: 2px solid #e6e6e6;
+    border-radius: 3px;
+    width: 350px;
+    height: 564px;
+    padding: 5px;
+    margin: 20px;
+}
+
+/* .session-form-box{
+    align-content: center
+} */
+
+.session-form-box input{
+    margin: 5px;
+}
+
+/*
+image formatting
+*/
+
+.splash-img {
+    margin: 20px;
+    height: 618px;
+ }
+
+ html{
+    background-color: #fafafa;
+ }
+ 
+
+.left-div{
+    float: left;
+}
+
+.right-div{
+    float: left;
+}
+
+.main-splash-div{
+    padding: 40px;
+    display: flex;
+    align-content: center;
+}
+
+.main-splash-div div{
+    margin: 0 auto;
+}
+

@@ -32,48 +32,60 @@ class SessionForm extends React.Component {
         if(this.props.formType === "signup"){
             return (
                 <div>
-                <label>Email:
-                    <input type="text" onChange={this.update("email")} value={this.state.email}/>
-                </label>
+                    <input type="text" 
+                    onChange={this.update("email")} 
+                    value={this.state.email} 
+                    placeholder="Email"/>
                 <br/>
-                <label>Name:
-                    <input type="text" onChange={this.update("name")} value={this.state.name}/>
-                </label>
+                    <input type="text" 
+                    onChange={this.update("name")} 
+                    value={this.state.name} 
+                    placeholder="Name"/>
                 <br/>
-                <label>Birthday:
-                    <input type="date" onChange={this.update("birthday")} value={this.state.birthday}/>
-                </label>
-                <br/>
-                <label>Website:
-                    <input type="text" onChange={this.update("website")} value={this.state.website}/>
-                </label>
                 </div>
             );
+        }
+    }
+
+    account_text(){
+        if(this.props.formType === "signup"){
+            return (<p>Have an account? <Link to={`/${this.props.navType}`}>Login</Link></p>);
+        } else {
+            return (<p>Don't have an account? <Link to={`/${this.props.navType}`}>Sign up</Link></p>)
+        }
+    }
+
+    formTypeText() {
+        if(this.props.formType === "signup") {
+            return("Sign up")
+        } else {
+            return ("Login")
         }
     }
 
     render() {
 
         return(
-            <div className="session_form_box">
+            <div className="session-form-box">
+                <h1>InstaKilogram</h1>
                 <form onSubmit={this.handleSubmit}>
-                <h1>{this.props.formType}</h1>
-                    <label>Username:
+                <h1>{this.formTypeText()}</h1>
                         <input type="text" 
                         onChange={this.update("username")}
-                        value={this.state.username}/>
-                    </label>
+                        value={this.state.username}
+                        placeholder="Username"/>
                     <br/>
-                    <label>Password:
                         <input type="text"
                         onChange={this.update("password")}
-                        value={this.state.password} />
-                    </label>
-                    {this.sign_up()}
-                    <input type="submit" value={this.props.formType}/>
+                        value={this.state.password} 
+                        placeholder="Password"/>
+                        {this.sign_up()}
+                    <br/>
+                    <input type="submit" value={this.formTypeText()} onSubmit={this.handleSubmit}/>
                 </form>
-                <br />
-                <Link to={`/${this.props.navType}`}>{this.props.navType}</Link>
+                <div className="alt-form-link-div">
+                    {this.account_text()}
+                </div>
             </div>
         )
     }
