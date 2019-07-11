@@ -1,6 +1,10 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
+// unsure of how to do auth/protected routes
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
+
 
 import GreetingContainer from './greeting/greeting_container'
 import SignUpFormContainer from './session_form/sign_up_form_container';
