@@ -10,7 +10,8 @@ const msp = (state, ownProps) => ({
 
 const mdp = (dispatch) => ({
     processForm: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(clearSessionErrors())
+    clearErrors: () => dispatch(clearSessionErrors()),
+    demoUser: (user) => dispatch(login(user))
 });
 
 export default connect(msp, mdp)(SessionForm);

@@ -21,13 +21,13 @@ const Greeting = ({currentUser, logout}) => {
             </footer>
         </main>
     );
-    const showMain = () => (
+    const Posts = () => (
         <div className="greeting-box">
             <h2 className="greeting-text"> Hi, {currentUser.username}!</h2>
             <button className="logout-button" onClick={logout}>Logout</button>
         </div>
     );
-    return currentUser ? showMain() : showSplash();
+    return currentUser ? Posts() : showSplash();
 }
 
 export default Greeting;

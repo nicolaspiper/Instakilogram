@@ -1,8 +1,12 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-
-// unsure of how to do auth/protected routes
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    HashRouter
+} from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from './../utils/route_util';
 
 
 
@@ -13,8 +17,8 @@ import LogInFormContainer from './session_form/login_form_container';
 const App = () => (
     <div>
         <Switch>
-            <Route path="/login" component={LogInFormContainer} />
-            <Route path="/signup" component={SignUpFormContainer} />
+            <AuthRoute path="/login" component={LogInFormContainer} />
+            <AuthRoute path="/signup" component={SignUpFormContainer} />
             <Route path ="/" component={GreetingContainer} />
         </Switch>
     </div>

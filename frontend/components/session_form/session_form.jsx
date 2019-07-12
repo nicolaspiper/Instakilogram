@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
             website: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
     }
     
     componentWillUnmount() {
@@ -31,6 +32,12 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        const user = {username: "demoUser", password: "password"};
+        this.props.demoUser(user);
     }
 
     sign_up(){
@@ -98,17 +105,24 @@ class SessionForm extends React.Component {
                 <div className="centered-box">
                     <div className="session-form-box">
                         <div className="logo">
-                            <h1 className="form-title">InstaKilogram</h1>
+                            <Link to="/" className="title-icon"><h1 className="form-title">InstaKilogram</h1></Link>
                         </div>
-                        <form onSubmit={this.handleSubmit} className="anon-form">
+                        <div className="anon-form">
                             <div className="form-message">
                                 {this.formMessageType()}
                             </div>
                             <div>
-                                <input type="submit"
+                                <button onClick={this.handleDemoSubmit} id="demo-submit-button">Demo User</button>
+                            </div>
+
+                        </div>
+                        <form onSubmit={this.handleSubmit} className="anon-form">
+                            
+                            <div>
+                                {/* <input type="submit"
                                     value="Demo User"
-                                    onSubmit={this.handleSubmit}
-                                    id="demo-submit-button" />
+                                    onSubmit={this.handleDemoSubmit}
+                                    id="demo-submit-button" /> */}
                             </div>
                             <div className="form-separator">
                                 <div id="form-separator-decoration"></div>
@@ -141,6 +155,8 @@ class SessionForm extends React.Component {
                                 {this.sign_up_bottom()}
                             </div>
                         </form>
+                    
+                        
                     </div>
                     <div id="switch-session-form-box">
                         <div className="alt-form-link-div">
@@ -149,14 +165,14 @@ class SessionForm extends React.Component {
                     </div>
                     <div className="apps">
                         <div id="apps-text">
-                            
+                            Get the app.
                         </div>
                         <div id="apps-pics">
                             <div className="companies">
-                                <img src="./assets/appstorebutton.png" alt="Find Instagram on the App store"/>
+                                <a href="https://apps.apple.com/us/app/instagram/id389801252"><img src="./assets/appstorebutton.png" alt="Find Instagram on the App store" /></a>
                             </div>
                             <div className="companies">
-                                <img src="./assets/googlestorebutton.png" alt="Find Instagram on the Google store"/>
+                                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_US"><img src="./assets/googlestorebutton.png" alt="Find Instagram on the Google store" /></a>
                             </div>
                         </div>
                     </div>

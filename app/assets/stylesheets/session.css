@@ -26,10 +26,6 @@ div#switch-session-form-box{
     margin: 5px;
 }
 
-/*
-image formatting
-*/
-
 .splash-img {
     margin: 20px;
     height: 618px;
@@ -88,6 +84,10 @@ image formatting
 .form-title{
     font-family: 'Pacifico';
     margin: 0 auto;
+}
+.title-icon{
+    text-decoration: none;
+    color: #000;
 }
 
 .form-message{
@@ -166,8 +166,6 @@ div.form-separator-content {
     flex-direction: row;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    /* -webkit-flex-direction: column; */
-    /* -ms-flex-direction: column; */
     padding: 0;
     position: relative;
 }
@@ -185,8 +183,12 @@ div.form-separator-content {
     font-size: 16px;
     color: #fff;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     font-family: "Roboto", sans-serif;
+}
+
+#submit-button:hover, #demo-submit-button:hover{
+    cursor: pointer;
 }
 
 #demo-submit-button{
@@ -199,10 +201,13 @@ div.form-separator-content {
     position: relative;
     margin-bottom: 10px;
     font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 8.5px;
 }
 
 .centered-box{
     margin: 0px auto;
+    box-sizing: border-box;
 }
 
 div.bottom-text{color: #999;
@@ -231,5 +236,37 @@ div.alt-form-link-div{
 ul {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
+    color: red;
+    line-height: 18px;
+    list-style-type: none;
+}
+
+div.apps{
+    display: flex;
+    max-width: inherit;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+#apps-text{
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
     line-height: 16px;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    height: 30px;
+}
+
+#apps-pics{
+    display: flex;
+    max-width: inherit;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.companies img{
+    max-height: 40px;
+    margin: 5px;
 }

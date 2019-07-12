@@ -6,14 +6,6 @@
     <%= csp_meta_tag %>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <% if logged_in? %>
-    <script type="text/javascript">
-      window.currentUser = <%= render(
-        "api/users/user.json.jbuilder",
-        user: current_user
-      ).html_safe %></script>
-    <% end %>  
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
