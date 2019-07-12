@@ -13,12 +13,15 @@ Having nearly pixel perfect styling and routing in my opinion I would like to sh
 In order to tackle the form I decided to anonymize a general form and use it on all three seperate pages, changing its functionality for each frontend view. 
 
 For your judgement here is a juxtaposition of Instagram and Instakilogram:
-![InstaKilogram](https://giphy.com/gifs/mBG8x1ru6ymQDRv0zC)
+![InstaKilogram](https://giphy.com/gifs/UUzbmje8LwbdEO3Er3)
 <!-- <iframe src="https://giphy.com/embed/mBG8x1ru6ymQDRv0zC" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mBG8x1ru6ymQDRv0zC">via GIPHY</a></p> -->
+
+
 Instagram:
-![InstaKilogram](https://giphy.com/gifs/dBxrmHbWNO5HMnQtm4)
+![Instagram](https://giphy.com/gifs/gIHORtBWSPUlgB7FSH)
 <!-- <iframe src="https://giphy.com/embed/dBxrmHbWNO5HMnQtm4" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dBxrmHbWNO5HMnQtm4">via GIPHY</a></p> -->
 
+<!-- <iframe src="https://giphy.com/embed/UUzbmje8LwbdEO3Er3" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/UUzbmje8LwbdEO3Er3">via GIPHY</a></p> -->
 
 <!-- This README would normally document whatever steps are necessary to get the
 application up and running.
