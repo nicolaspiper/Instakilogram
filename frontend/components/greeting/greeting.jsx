@@ -23,8 +23,12 @@ const Greeting = ({currentUser, logout}) => {
     );
     const Posts = () => (
         <div className="greeting-box">
-            <h2 className="greeting-text"> Hi, {currentUser.username}!</h2>
-            <button className="logout-button" onClick={logout}>Logout</button>
+            <div className="center-box">
+                <h2 className="greeting-text"> Hi, {currentUser.username}!</h2>
+                <button className="logout-button" onClick={logout}>Logout</button>
+                <p>Posts coming soon...</p>
+            </div>
+
         </div>
     );
     return currentUser ? Posts() : showSplash();

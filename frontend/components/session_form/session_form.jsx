@@ -117,13 +117,6 @@ class SessionForm extends React.Component {
 
                         </div>
                         <form onSubmit={this.handleSubmit} className="anon-form">
-                            
-                            <div>
-                                {/* <input type="submit"
-                                    value="Demo User"
-                                    onSubmit={this.handleDemoSubmit}
-                                    id="demo-submit-button" /> */}
-                            </div>
                             <div className="form-separator">
                                 <div id="form-separator-decoration"></div>
                                 <div className="form-separator-content">or</div>
