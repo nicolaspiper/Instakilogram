@@ -12,19 +12,15 @@ Having nearly pixel perfect styling and routing in my opinion I would like to sh
 
 In order to tackle the form I decided to anonymize a general form and use it on all three seperate pages, changing its functionality for each frontend view. 
 
-For your judgement here is a juxtaposition of Instagram and Instakilogram:
-<br/>
-<br/>
+Here is a juxtaposition of Instagram and Instakilogram:
+Instakilogram:
+[instakilogram](./app/assets/images/Animated GIF-sourceKILO.gif)
 <img src="./app/assets/images/Animated GIF-sourceKILO.gif"/>
-<br/>
-<br/>
 
 Instagram:
-<br/>
-<br/>
-<img src="./app/assets/images/Animated GIF-source.gif"/>
-<br/>
-<br/>
+[instagram](./app/assets/images/Animated GIF-source.gif)
+<!-- <img src="./app/assets/images/Animated GIF-source.gif"/> -->
+
 <!-- <iframe src="https://giphy.com/embed/dBxrmHbWNO5HMnQtm4" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dBxrmHbWNO5HMnQtm4">via GIPHY</a></p> -->
 
 <!-- <iframe src="https://giphy.com/embed/UUzbmje8LwbdEO3Er3" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/UUzbmje8LwbdEO3Er3">via GIPHY</a></p> -->
