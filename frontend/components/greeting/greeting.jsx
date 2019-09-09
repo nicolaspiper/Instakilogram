@@ -17,7 +17,12 @@ const Greeting = ({currentUser, logout}) => {
                 </div>
             </div>
             <footer className="bottom-links">
-
+                <div className="external-links">
+                    <a href="nicolaspiper.netlify.com">Creator's Website</a>
+                    <a href="https://github.com/nicolaspiper">Github</a>
+                    <a href="https://www.linkedin.com/in/nicolaspiper/">LinkedIn</a>
+                </div>
+                <div className="copyright">Nicolas Piper &#169;</div>
             </footer>
         </main>
     );
