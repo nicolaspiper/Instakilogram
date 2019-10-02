@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from "./greeting_container"
 import {Link} from 'react-router-dom';
 import SignUpContainer from "./../session_form/sign_up_form_container";
+import Navbar from "./../navbar/navbar_container"
 
 const Greeting = ({currentUser, logout}) => {
     const showSplash = () => (
@@ -28,6 +29,7 @@ const Greeting = ({currentUser, logout}) => {
     );
     const Posts = () => (
         <div className="greeting-box">
+            <Navbar/>
             <div className="center-box">
                 <h2 className="greeting-text"> Hi, {currentUser.username}!</h2>
                 <button className="logout-button" onClick={logout}>Logout</button>

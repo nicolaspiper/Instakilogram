@@ -1,0 +1,13 @@
+.navbar{
+    align-items: center;
+
+}
+
+.navbarContent{
+    border: 1px solid red;
+    margin: 0px 15%;
+    padding: 20px 15%;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+}
