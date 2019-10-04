@@ -11,7 +11,13 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <div className="navbarContent">Navbar under construction</div>
+                <div className="navbarContent">
+                    <div className="homelink">
+                        <img src="assets/images/Instagramera.png" alt="Home"/>
+                    </div>
+                    <div className="centerDiv"></div>
+                    <div className=""></div>
+                </div>
             </div>
         )
     }
