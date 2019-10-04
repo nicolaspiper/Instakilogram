@@ -10,7 +10,6 @@
 
 .navbarContent{
     border: 1px solid red;
-    padding: 0px 15%;
     align-items: center;
     box-sizing: border-box;
     margin: 0px 15%;
@@ -24,8 +23,27 @@
     width: 33%;
     border: 1px solid red;
     height: 30px;
+    font-family: 'Pacifico';
+    align-items: center;
 }
 
 .iconImg{
-    background-image: "assets/images/Instagramera.png";
+    background-image: url("assets/images/Instagramera.png");
+}
+
+#vertDivider{
+    border: none;
+    background-color: #262626;
+    height: 28px;
+    margin: auto 16px;
+    width: 1px;
+}
+
+.leftyLinks{
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+}
+.leftyLinks div{
+    box-sizing: content-box;
 }

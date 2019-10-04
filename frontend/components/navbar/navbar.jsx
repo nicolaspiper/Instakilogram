@@ -12,11 +12,15 @@ class Navbar extends React.Component {
         return (
             <div className="navbar">
                 <div className="navbarContent">
-                    <div className="homelink">
-                        <img src="assets/images/Instagramera.png" alt="Home"/>
+                    <div className="homelinks">
+                        <div className="leftyLinks">
+                            <div className="iconImg"></div>
+                            <div id="vertDivider"></div>
+                            <div>Instakilogram</div>
+                        </div>
                     </div>
                     <div className="centerDiv"></div>
-                    <div className=""></div>
+                    <div className="rightDiv"></div>
                 </div>
             </div>
         )
