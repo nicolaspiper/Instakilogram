@@ -20,15 +20,18 @@
 }
 .navbarContent div{
     display: flex;
+    flex-direction: row;
+    flex-grow: 1;
     width: 33%;
     border: 1px solid red;
-    height: 30px;
+    height: 100%;
     font-family: 'Pacifico';
     align-items: center;
 }
 
 .iconImg{
-    background-image: url("assets/images/Instagramera.png");
+    width: 30px;
+    height: 30px;
 }
 
 #vertDivider{
@@ -37,12 +40,14 @@
     height: 28px;
     margin: auto 16px;
     width: 1px;
+    flex-grow: 0;
 }
 
 .leftyLinks{
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
+    height: 100%;
 }
 .leftyLinks div{
     box-sizing: content-box;
