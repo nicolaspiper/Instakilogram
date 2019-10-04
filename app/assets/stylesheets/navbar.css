@@ -21,17 +21,17 @@
 .navbarContent div{
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    width: 33%;
+    /* flex-grow: 1; */
+    width: 1/3;
     border: 1px solid red;
     height: 100%;
-    font-family: 'Pacifico';
     align-items: center;
 }
 
 .iconImg{
-    width: 30px;
-    height: 30px;
+    /* width: 100px;
+    height: 100px; */
+    background: url("/assets/images/Instagramera.png")
 }
 
 #vertDivider{
@@ -43,12 +43,20 @@
     flex-grow: 0;
 }
 
+.homeLinks{
+    display: flex;
+    justify-items: flex-start;
+}
+
 .leftyLinks{
+    border: 1px dotted blue;
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
     height: 100%;
+    font-family: 'Pacifico';
 }
 .leftyLinks div{
+    border: 1px dotted blue;
     box-sizing: content-box;
 }
