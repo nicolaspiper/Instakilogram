@@ -9,7 +9,7 @@
 }
 
 .navbarContent{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     align-items: center;
     box-sizing: border-box;
     margin: 0px 15%;
@@ -23,22 +23,21 @@
     flex-direction: row;
     /* flex-grow: 1; */
     width: 1/3;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 100%;
     align-items: center;
 }
 
 .iconImg{
-    /* width: 100px;
-    height: 100px; */
-    background: url("/assets/images/Instagramera.png")
+    margin: 0px 0px 0px 5px;
+    height: 34px;
 }
 
 #vertDivider{
     border: none;
     background-color: #262626;
     height: 28px;
-    margin: auto 16px;
+    margin: auto 10px;
     width: 1px;
     flex-grow: 0;
 }
@@ -46,10 +45,11 @@
 .homeLinks{
     display: flex;
     justify-items: flex-start;
+    /* flex-grow: 1; */
 }
 
 .leftyLinks{
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
@@ -57,6 +57,15 @@
     font-family: 'Pacifico';
 }
 .leftyLinks div{
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
     box-sizing: content-box;
+}
+
+.appName{
+    height: auto;
+    margin-left: 5px;
+}
+
+.rightDiv{
+    padding: auto 5px;
 }
