@@ -61,11 +61,28 @@
     box-sizing: content-box;
 }
 
+.iconImg:hover{
+    cursor: pointer;
+}
+
 .appName{
     height: auto;
     margin-left: 5px;
+    font-size: 18px;
+}
+
+.appName p:hover{
+    cursor: pointer;
 }
 
 .rightDiv{
     padding: auto 5px;
+}
+
+.rightDiv *{
+    margin: auto 8px;
+}
+
+.rightDiv *:hover{
+    cursor: pointer;
 }
