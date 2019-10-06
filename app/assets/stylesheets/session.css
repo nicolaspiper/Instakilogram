@@ -83,7 +83,8 @@ div#switch-session-form-box{
 
 .form-title{
     font-family: 'Pacifico';
-    margin: 0 auto;
+    font-size: 30px;
+    margin: 10px auto;
 }
 .title-icon{
     text-decoration: none;
@@ -225,7 +226,8 @@ div.alt-form-link-div{
     align-content: center;
     justify-content: center;
     font-family: "Roboto", sans-serif;
-    padding-top: 5px;
+    /* padding-top: 5px; */
+    margin: auto auto;
     font-size: 14px;
 }
 
