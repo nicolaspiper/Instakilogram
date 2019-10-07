@@ -1,6 +1,5 @@
-// export const openModal = 'OPEN_USER_MODAL';
-// export const closeModal = 'closeModal';
-// export const OPEN_PHOTO_MODAL = 'OPEN_PHOTO_MODAL';
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 export const openModal = modal => {
     return {

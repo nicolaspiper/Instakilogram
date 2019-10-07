@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/ui_actions';
+
 
 class Navbar extends React.Component {
     
@@ -26,7 +26,9 @@ class Navbar extends React.Component {
                     <div className="rightDiv">
                         <img src="/assets/Explorerericon.png" className="iconImg" alt="explore"/>
                         <img src="/assets/Heartagram.png" className="iconImg" alt="heart"/>
-                        <img src="/assets/Profile.png" className="iconImg" alt="profile" onClick={() => openModal("profile")}/>
+                        <img src="/assets/Profile.png" className="iconImg" alt="profile" 
+                            onClick={this.props.openProfile}
+                            />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/ui_actions';
-import './modal.css';
+// import './modal.css';
 
 
 function Modal({ modal, closeModal }) {
@@ -31,7 +31,7 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
     return {
-        modal: state.ui.modal
+        modal: state.ui
     };
 };
 

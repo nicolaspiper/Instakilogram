@@ -7,7 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from './../utils/route_util';
-
+import Modal from './modal/modal'
 
 
 import GreetingContainer from './greeting/greeting_container'
@@ -16,6 +16,7 @@ import LogInFormContainer from './session_form/login_form_container';
 
 const App = () => (
     <div>
+        <Modal/>
         <Switch>
             <AuthRoute path="/login" component={LogInFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
