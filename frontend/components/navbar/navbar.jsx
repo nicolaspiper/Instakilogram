@@ -22,7 +22,6 @@ class Navbar extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="centerDiv">empty content</div> */}
                     <div className="rightDiv">
                         <img src="/assets/Explorerericon.png" className="iconImg" alt="explore"/>
                         <img src="/assets/Heartagram.png" className="iconImg" alt="heart"/>

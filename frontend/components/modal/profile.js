@@ -23,7 +23,7 @@ function Profile({currentUser, logout, closeModal}){
             <div className="profile">
                 <div className="userInfo"> 
                     <div className="profileImg">
-                        <img src="/assets/Profile.png" className="iconImg" alt="profile"/>
+                        <img src={window.instagramera} className="iconImg" alt="profile"/>
                     </div>
                     <div className="userText">
                         <h1>{currentUser.username}'s profile </h1><br/>
