@@ -1,31 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeUserModal } from './../../actions/ui_actions';
+import { closeModal } from './../../actions/ui_actions';
 import { logout } from '../../actions/session_actions';
 
 
-
 const msp = state => ({
-    // loggedIn: state.session.isAuthenticated,
-    // userModalOpen: state.ui.userModalOpen,
-    // handle: (state.session.user ? state.session.user.handle : 'guest')
+    currentUser: state.entities.users[state.session.id],
 })
 
 const mdp = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal()),
-        logout: () => { logout()(dispatch); closeUserModal() },
+        // closeModal: () => dispatch(closeModal()),
+        logout: () => { dispatch(closeModal()); logout()(dispatch); },
+        // reorganized modal closing, need to dispatch the called method closeModal
+        // The closeModal on line 14 is the imported closeModal from the actions
+        
     }
 }
 
-function Profile(){
-    // if (!userModalOpen || !loggedIn) {
-    //     closeUserModal()
-    //     return null;
-    // } else {
+function Profile({currentUser, logout}){
         return (
             <div className="profile">
-                <p>TEST DIV</p>  
+                <div> {currentUser.username}'s profile</div> 
+                <div onClick={logout}>
+                    Logout
+                </div>
             </div>
         );
     // }
