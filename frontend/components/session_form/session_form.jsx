@@ -141,7 +141,7 @@ class SessionForm extends React.Component {
                                 onSubmit={this.handleSubmit}
                                 id="submit-button"/>
                             </div>
-                            <div>
+                            <div className="errors">
                                 {this.errorsList()}
                             </div>
                             <div className="bottom-text">

@@ -21,7 +21,15 @@ const mdp = dispatch => {
 function Profile({currentUser, logout, closeModal}){
         return (
             <div className="profile">
-                <div className="userInfo"> {currentUser.name}'s profile</div> 
+                <div className="userInfo"> 
+                    <div className="profileImg">
+                        <img src="/assets/Profile.png" className="iconImg" alt="profile"/>
+                    </div>
+                    <div className="userText">
+                        <h1>{currentUser.username}'s profile </h1><br/>
+                        <p>{currentUser.email}</p>
+                    </div>
+                </div> 
                 <div onClick={logout} className="profileOption">
                     Logout
                 </div>

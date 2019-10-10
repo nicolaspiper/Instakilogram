@@ -244,6 +244,12 @@ ul {
     list-style-type: none;
 }
 
+ul li{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
 div.apps{
     display: flex;
     max-width: inherit;
