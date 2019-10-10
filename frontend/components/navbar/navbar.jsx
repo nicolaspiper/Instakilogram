@@ -15,10 +15,10 @@ class Navbar extends React.Component {
                 <div className="navbarContent">
                     <div className="homeLinks">
                         <div className="leftyLinks">
-                            <img src="/assets/instagramera.png" className="iconImg" alt="instakilogram home"/>
+                            <Link to="/" ><img src="/assets/instagramera.png" className="iconImg" alt="instakilogram home" /></Link>
                             <div id="vertDivider"></div>
                             <div className="appName">
-                               <p>Instakilogram</p>
+                                <Link to="/"><p>Instakilogram</p></Link>
                             </div>
                         </div>
                     </div>

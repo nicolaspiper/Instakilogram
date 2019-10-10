@@ -56,9 +56,15 @@
     height: 100%;
     font-family: 'Pacifico';
 }
+
 .leftyLinks div{
     /* border: 1px dotted blue; */
     box-sizing: content-box;
+}
+
+.leftyLinks *{
+    text-decoration: none;
+    color: black;
 }
 
 .iconImg:hover{
