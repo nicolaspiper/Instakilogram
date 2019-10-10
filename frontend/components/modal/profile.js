@@ -10,20 +10,23 @@ const msp = state => ({
 
 const mdp = dispatch => {
     return {
-        // closeModal: () => dispatch(closeModal()),
+        closeModal: () => dispatch(closeModal()),
         logout: () => { dispatch(closeModal()); logout()(dispatch); },
         // reorganized modal closing, need to dispatch the called method closeModal
         // The closeModal on line 14 is the imported closeModal from the actions
-        
+
     }
 }
 
-function Profile({currentUser, logout}){
+function Profile({currentUser, logout, closeModal}){
         return (
             <div className="profile">
-                <div> {currentUser.username}'s profile</div> 
-                <div onClick={logout}>
+                <div className="userInfo"> {currentUser.name}'s profile</div> 
+                <div onClick={logout} className="profileOption">
                     Logout
+                </div>
+                <div onClick={closeModal} className="profileOption">
+                    Cancel
                 </div>
             </div>
         );

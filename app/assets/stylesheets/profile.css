@@ -1,0 +1,13 @@
+.userInfo{
+    height: 100px;
+}
+
+.profileOption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    border-top: 1px solid rgba(0,0,0,.0975);
+    padding: 10px 0px;
+    font-family: "Roboto", sans-serif;
+}

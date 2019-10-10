@@ -31,8 +31,6 @@ const Greeting = ({currentUser, logout}) => {
         <div className="greeting-box">
             <Navbar/>
             <div className="center-box">
-                <h2 className="greeting-text"> Hi, {currentUser.username}!</h2>
-                <button className="logout-button" onClick={logout}>Logout</button>
                 <p>Posts coming soon...</p>
             </div>
 
