@@ -18,6 +18,10 @@
     transform: translateX(-2px);
 }
 
+.profileImg img:hover{
+    cursor: auto;
+}
+
 .userText{
     padding: 20px 20px;
 }
