@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                 <div className="navbarContent">
                     <div className="homeLinks">
                         <div className="leftyLinks">
-                            <Link to="/" ><img src="/assets/instagramera.png" className="iconImg" alt="instakilogram home" /></Link>
+                            <Link to="/" ><img src={window.instagramera} className="iconImg" alt="instakilogram home" /></Link>
                             <div id="vertDivider"></div>
                             <div className="appName">
                                 <Link to="/"><p>Instakilogram</p></Link>
