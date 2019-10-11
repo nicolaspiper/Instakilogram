@@ -2,7 +2,8 @@ import React from 'react';
 import GreetingContainer from "./greeting_container"
 import {Link} from 'react-router-dom';
 import SignUpContainer from "./../session_form/sign_up_form_container";
-import Navbar from "./../navbar/navbar_container"
+import Navbar from "./../navbar/navbar_container";
+import Posts from "./../posts/posts";
 
 
 
@@ -21,6 +22,10 @@ export default class Greeting extends React.Component {
         }).then(posts => {
             this.setState({ posts })
         });
+    }
+
+    componentDidMount(){
+        this.fetchPosts();
     }
 
     showSplash(){
@@ -53,7 +58,7 @@ export default class Greeting extends React.Component {
             <div className="greeting-box">
                 <Navbar/>
                 <div className="center-box">
-                    <p>Posts coming soon...</p>
+                    <Posts posts={this.fetchPosts()}/>
                 </div>
             </div>
         )
