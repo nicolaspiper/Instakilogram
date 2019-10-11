@@ -11,12 +11,14 @@ export default class Greeting extends React.Component {
 
     constructor(props){
         super(props);
-        // this.showSplash = this.showSplash.bind(this);
-        // this.posts = this.posts.bind(this);
+        this.state = {};
+        this.showSplash = this.showSplash.bind(this);
+        this.posts = this.posts.bind(this);
         this.fetchPosts = this.fetchPosts.bind(this);
     }
 
     fetchPosts() {
+
         $.ajax({
             url: "/api/posts"
         }).then(posts => {
@@ -54,11 +56,14 @@ export default class Greeting extends React.Component {
     }
 
     posts(){
+        if(!this.state.posts){
+            return " "
+        }
         return(
             <div className="greeting-box">
                 <Navbar/>
                 <div className="center-box">
-                    <Posts posts={this.fetchPosts()}/>
+                    <Posts posts={this.state.posts}/>
                 </div>
             </div>
         )
