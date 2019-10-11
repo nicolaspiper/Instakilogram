@@ -11,7 +11,7 @@ const msp = state => ({
 const mdp = dispatch => {
     return {
         closeModal: () => dispatch(closeModal()),
-        logout: () => { dispatch(closeModal()); logout()(dispatch); },
+        logout: () => { dispatch(closeModal()); dispatch(logout()); },//logout()(dispatch)
         // reorganized modal closing, need to dispatch the called method closeModal
         // The closeModal on line 14 is the imported closeModal from the actions
 
