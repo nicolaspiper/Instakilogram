@@ -1,0 +1,44 @@
+.postsIndex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.postContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 616px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.postPhoto{
+    box-sizing: border-box;
+    display: flex;
+}
+
+.postPhoto img{
+    max-width: 614px;
+    height:auto;
+}
+
+.userPostHeader{
+    padding: 5px 5px;    
+}
+
+.actionIcons{
+    padding: 5px 5px;
+}
+
+.postCaption{
+    padding: 5px 5px;
+}
+
+.comments{
+    padding: 5px 5px;
+}
+
