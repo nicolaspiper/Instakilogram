@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .postContainer{
@@ -14,6 +14,7 @@
     border: 1px solid #999999;
     background-color: #ffffff;
     border-radius: 2px;
+    margin-top: 25px;
 }
 
 .postPhoto{

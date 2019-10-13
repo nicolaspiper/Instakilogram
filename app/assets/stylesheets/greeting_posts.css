@@ -5,9 +5,21 @@
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    padding: auto auto;
 }
 
 .center-box{
-    margin: auto auto;
+    transform: translateY(550px);
+    /* position: absolute; */
+    margin: 0px auto;
+    display: flex;
+    flex-grow: 1;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+.allPosts{
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
 }

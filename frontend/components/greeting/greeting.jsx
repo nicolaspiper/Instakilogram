@@ -63,7 +63,7 @@ export default class Greeting extends React.Component {
             <div className="greeting-box">
                 <Navbar/>
                 <div className="center-box">
-                    <Posts posts={this.state.posts}/>
+                    <Posts className="allPosts" posts={this.state.posts}/>
                 </div>
             </div>
         )
