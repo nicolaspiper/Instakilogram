@@ -3,12 +3,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    align-content: flex-start;
+    justify-content: flex-start;
 }
 
 .center-box{
-    transform: translateY(550px);
+    transform: translateY(80px);
     /* position: absolute; */
     margin: 0px auto;
     display: flex;
