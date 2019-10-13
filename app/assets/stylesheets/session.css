@@ -1,3 +1,9 @@
+@media only screen and (max-width: 900px){
+    .left-div{
+        display: none;
+    }
+}
+ 
 div.session-form-box{
     background-color: #fff;
     border: 1px solid #e6e6e6;
