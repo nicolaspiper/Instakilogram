@@ -19,7 +19,7 @@ users = [
         { id: 8, username: 'Alchemist', name: 'Philippus Aureolus Theophrastus Bombastus von Hohenheim', email: 'alchemist@magic.org', password: 'eternity', birthday: Time.now()},
         { id: 9, username: 'TH3_M1CR0SC0P3R_F4N4T1C', name: 'Louis Pasteur', email: 'louis@heineken.com', password: 'yeastman', birthday: Time.now()},
         { id: 10, username: 'HahvahdProf', name: 'George Church', email: 'gchurch@harvard.edu', password: 'woolymammoth', birthday: Time.now()},
-        { id: 11, username: 'theOGmicroscoper', name: 'Robert Hooke', email: 'microscoper@england.eng', password: 'tinycell', birthday: Time.now()},
+        { id: 11, username: 'theOGmicroscoper', name: 'Anthony von Leeuwenhoek', email: 'microscoper@netherlands.eng', password: 'tinycell', birthday: Time.now()},
         ]
 users.each do |user|
     User.create!(user)
