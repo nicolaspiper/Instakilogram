@@ -44,21 +44,21 @@ posts = [
 # {id: 16, caption: '', author_id: 1}
 ]
 posts_photos = [
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bluedot.jpg'), filename: 'bluedot'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/radium.jpeg'), filename: 'radium' },
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/appletree.jpg'), filename: 'fallingapple' },
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/mushroom_cloud.jpg'), filename: 'mushroomcloud'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/wooly_mammoth.jpg'), filename: 'woolymammoth'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/alchemist.jpg'), filename: 'alchemist'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/heinekenyeast.jpg'), filename: 'heinekenyeast'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bern_watchtower.jpg'), filename: 'bernwatchtower'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/animalcules.jpg'), filename: 'animicules'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/polonium.jpeg'), filename: 'polonium'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/spontaneous_generation.jpg'), filename: 'spontaneousgeneration'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/newtoncalc.png'), filename: 'newtoncalc'},
-    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/goose.jpg_large'), filename: 'HONK'}
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/bluedot.jpg'), filename: 'bluedot'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/radium.jpeg'), filename: 'radium' },
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/appletree.jpg'), filename: 'fallingapple' },
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mushroom_cloud.jpg'), filename: 'mushroomcloud'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/wooly_mammoth.jpg'), filename: 'woolymammoth'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/alchemist.jpg'), filename: 'alchemist'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/heinekenyeast.jpg'), filename: 'heinekenyeast'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/bern_watchtower.jpg'), filename: 'bernwatchtower'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/animalcules.jpg'), filename: 'animicules'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/polonium.jpeg'), filename: 'polonium'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/spontaneous_generation.jpg'), filename: 'spontaneousgeneration'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/newtoncalc.png'), filename: 'newtoncalc'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/goose.jpg_large'), filename: 'HONK'}
 ] 
 # # created_at: Time.now(), updated_at: Time.now()
 
