@@ -20,9 +20,25 @@ users = [
         { id: 9, username: 'TH3_M1CR0SC0P3R_F4N4T1C', name: 'Louis Pasteur', email: 'louis@heineken.com', password: 'yeastman', birthday: Time.now()},
         { id: 10, username: 'HahvahdProf', name: 'George Church', email: 'gchurch@harvard.edu', password: 'woolymammoth', birthday: Time.now()},
         { id: 11, username: 'theOGmicroscoper', name: 'Anthony von Leeuwenhoek', email: 'microscoper@netherlands.eng', password: 'tinycell', birthday: Time.now()},
-        ]
-users.each do |user|
-    User.create!(user)
+    ]
+posts_photos = [
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+]
+
+users.each.with_index do |user, i|
+    new_user = User.create!(user)
+    if i != 0
+        new_user.photo.attach(user_photos[i-1]) ## demoUser profile skipped, sticking with the default profile asset
+    end
 end
 
 posts = [
