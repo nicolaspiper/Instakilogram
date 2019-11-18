@@ -21,24 +21,26 @@ users = [
         { id: 10, username: 'HahvahdProf', name: 'George Church', email: 'gchurch@harvard.edu', password: 'woolymammoth', birthday: Time.now()},
         { id: 11, username: 'theOGmicroscoper', name: 'Anthony von Leeuwenhoek', email: 'microscoper@netherlands.eng', password: 'tinycell', birthday: Time.now()},
     ]
-posts_photos = [
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
-    # {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+user_photos = [
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/Profile.png'), filename: 'default'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/goose.png'), filename: 'goose'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/Newton.jpg'), filename: 'newtonprofilepic'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/einsteinprofile.jpg'), filename: 'einstein'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/carlsagan.jpeg'), filename: 'carlsagan'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/paracelsus.jpeg'), filename: 'paracelsus'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/louispasteur.jpg'), filename: 'pasteurprofilepic'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/georgechurch.jpg'), filename: 'georgechurchprofpic'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/leeuwenhoek.jpeg'), filename: 'leeuwenhoekprofilepic'},
 ]
 
 users.each.with_index do |user, i|
     new_user = User.create!(user)
-    if i != 0
-        new_user.photo.attach(user_photos[i-1]) ## demoUser profile skipped, sticking with the default profile asset
-    end
+    new_user.photo.attach(user_photos[i]) ## demoUser profile skipped, sticking with the default profile asset
+    # it's janky, but I will have to store a new default image for every new user in my AWS storage
+    # if i != 0
+    # end
 end
 
 posts = [
@@ -60,21 +62,21 @@ posts = [
 # {id: 16, caption: '', author_id: 1}
 ]
 posts_photos = [
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/bluedot.jpg'), filename: 'bluedot'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/radium.jpeg'), filename: 'radium' },
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/appletree.jpg'), filename: 'fallingapple' },
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mushroom_cloud.jpg'), filename: 'mushroomcloud'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/wooly_mammoth.jpg'), filename: 'woolymammoth'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/alchemist.jpg'), filename: 'alchemist'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/heinekenyeast.jpg'), filename: 'heinekenyeast'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/bern_watchtower.jpg'), filename: 'bernwatchtower'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/animalcules.jpg'), filename: 'animicules'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/polonium.jpeg'), filename: 'polonium'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/spontaneous_generation.jpg'), filename: 'spontaneousgeneration'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/newtoncalc.png'), filename: 'newtoncalc'},
-    {io: open('https://instakilogram-pro.s3-us-west-1.amazonaws.com/goose.jpg_large'), filename: 'HONK'}
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bluedot.jpg'), filename: 'bluedot'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/radium.jpeg'), filename: 'radium' },
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/appletree.jpg'), filename: 'fallingapple' },
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/mushroom_cloud.jpg'), filename: 'mushroomcloud'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/wooly_mammoth.jpg'), filename: 'woolymammoth'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/alchemist.jpg'), filename: 'alchemist'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/haber.png'), filename: 'haber'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/heinekenyeast.jpg'), filename: 'heinekenyeast'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/mariecurie.jpg'), filename: 'mariecurie'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bern_watchtower.jpg'), filename: 'bernwatchtower'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/animalcules.jpg'), filename: 'animicules'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/polonium.jpeg'), filename: 'polonium'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/spontaneous_generation.jpg'), filename: 'spontaneousgeneration'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/newtoncalc.png'), filename: 'newtoncalc'},
+    {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/goose.jpg_large'), filename: 'HONK'}
 ] 
 # # created_at: Time.now(), updated_at: Time.now()
 

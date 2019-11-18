@@ -15,7 +15,11 @@
 
 .profileImg img{
     height: 80px;
-    transform: translateX(-2px);
+    /* https://stackoverflow.com/questions/37127855/force-an-image-to-always-stay-at-the-middle-of-a-div useful trick to force image to center */
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
 
 .profileImg img:hover{

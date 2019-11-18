@@ -19,25 +19,24 @@ const mdp = dispatch => {
 }
 
 function Profile({currentUser, logout, closeModal}){
-        return (
-            <div className="profile">
-                <div className="userInfo"> 
-                    <div className="profileImg">
-                        <img src="/assets/Profile.png" className="iconImg" alt="profile"/>
-                    </div>
-                    <div className="userText">
-                        <h1>{currentUser.username}'s profile </h1><br/>
-                        <p>{currentUser.email}</p>
-                    </div>
-                </div> 
-                <div onClick={logout} className="profileOption">
-                    Logout
+    return (
+        <div className="profile">
+            <div className="userInfo"> 
+                <div className="profileImg">
+                    <img src={currentUser.photoUrl} className="iconImg" alt="profileimage"/>
                 </div>
-                <div onClick={closeModal} className="profileOption">
-                    Cancel
+                <div className="userText">
+                    <h1>{currentUser.username}'s profile </h1><br/>
+                    <p>{currentUser.email}</p>
                 </div>
+            </div> 
+            <div onClick={logout} className="profileOption">
+                Logout
             </div>
-        );
-    // }
+            <div onClick={closeModal} className="profileOption">
+                Cancel
+            </div>
+        </div>
+    );
 }
 export default connect(msp, mdp)(Profile);

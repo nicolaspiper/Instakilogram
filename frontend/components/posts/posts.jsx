@@ -15,6 +15,7 @@ class Posts extends React.Component {
             <div className="postContainer" key={post.id}>
                 <div className="userPostHeader">
                     <p>{post.author_id}</p>
+                    {/* <p>{User.find_by(post.author_id).username}</p> need to get posts frontend working*/}
                 </div>
                 <div className="postPhoto">
                     <img src={post.photoUrl} alt={post.caption} />
