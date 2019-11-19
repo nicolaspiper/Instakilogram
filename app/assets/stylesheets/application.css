@@ -14,6 +14,10 @@
  *= require_self
  */
 
+:root{
+	--sans-serif: "Roboto", sans-serif;
+    --profpicsize: 50px;
+}
 
  /* credit for css reset to:  http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
