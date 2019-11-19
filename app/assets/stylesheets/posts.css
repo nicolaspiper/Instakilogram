@@ -36,6 +36,7 @@
     display: flex;
     padding: 5px 5px;  
     align-items: center;
+    height: 60px;
 }
 
 .actionIcons{
@@ -66,10 +67,10 @@
 }
 
 .profileImgMask img{
-    /* max-height: var(--profpicsize); */
-    max-width: var(--profpicsize);
-    /* width: 100px;
-    height: 100px; */
-    background-position: center center;
-    background-repeat: no-repeat;
+/* https://stackoverflow.com/questions/12991351/css-force-image-resize-and-keep-aspect-ratio */
+/* SO object-fit link super useful, may use in formatting posts */
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+
 }
