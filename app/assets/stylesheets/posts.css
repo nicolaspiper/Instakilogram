@@ -1,6 +1,3 @@
-:root{
-    --profpicsize: 50px;
-}
 .postsIndex{
     display: flex;
     flex-direction: column;
@@ -8,6 +5,11 @@
     /* align-items: center; */
 }
 
+.postContainer p{
+    font-family: var(--sans-serif);
+    line-height: 18px;
+    font-weight: 200;
+}
 .postContainer{
     display: flex;
     flex-direction: column;
@@ -55,15 +57,29 @@
 .comments{
     padding: 5px 5px;
 }
+.colorBorder{
+    margin: 5px 10px;
+    background: linear-gradient(to bottom left, red, yellow);
+    border-radius: 100%;
+}
 
 .profileImgMask{
-    margin: 5px 10px;
     width: var(--profpicsize);
     height: var(--profpicsize);
-    border: red 2px solid;
+    /* border: linear-gradient(bottom left, red, yellow) 2px solid;  putting gradient
+    border on upper div, this div will serve as a mask*/ 
+    border: 2px solid #ffffff;
+    margin: 2px 2px;
     border-radius: 100%;
     overflow: hidden;
     display: flex;
+}
+
+#username{
+    font-family: var(--sans-serif);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 1000;
 }
 
 .profileImgMask img{

@@ -37,7 +37,7 @@
 
 .userText p{
     color: #999;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--sans-serif);
     font-size: 14px;
 }
 
