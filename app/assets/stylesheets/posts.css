@@ -1,3 +1,6 @@
+:root{
+    --profpicsize: 50px;
+}
 .postsIndex{
     display: flex;
     flex-direction: column;
@@ -30,18 +33,43 @@
 }
 
 .userPostHeader{
-    padding: 5px 5px;    
+    display: flex;
+    padding: 5px 5px;  
+    align-items: center;
 }
 
 .actionIcons{
     padding: 5px 5px;
 }
 
+.postCaption p:first-child{
+    margin: 0px 5px 0px 0px;
+}
 .postCaption{
     padding: 5px 5px;
+    display: flex;
+    flex-direction: row;
 }
 
 .comments{
     padding: 5px 5px;
 }
 
+.profileImgMask{
+    margin: 5px 10px;
+    width: var(--profpicsize);
+    height: var(--profpicsize);
+    border: red 2px solid;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.profileImgMask img{
+    /* max-height: var(--profpicsize); */
+    max-width: var(--profpicsize);
+    /* width: 100px;
+    height: 100px; */
+    background-position: center center;
+    background-repeat: no-repeat;
+}

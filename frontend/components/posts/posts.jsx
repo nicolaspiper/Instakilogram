@@ -14,7 +14,10 @@ class Posts extends React.Component {
         let all_posts = this.props.posts.map((post) => (
             <div className="postContainer" key={post.id}>
                 <div className="userPostHeader">
-                    <p>{post.author_id}</p>
+                    <div className="profileImgMask">
+                        <img src={post.userPhoto} ></img>
+                    </div>
+                    <p>{post.user}</p>
                     {/* <p>{User.find_by(post.author_id).username}</p> need to get posts frontend working*/}
                 </div>
                 <div className="postPhoto">
@@ -24,6 +27,7 @@ class Posts extends React.Component {
                     buttons go here
                 </div>
                 <div className="postCaption">
+                    <p>{post.user}</p>
                     <p>{post.caption}</p>
                 </div>
                 <div className="comments">
