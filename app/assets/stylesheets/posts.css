@@ -9,6 +9,7 @@
     font-family: var(--sans-serif);
     line-height: 18px;
     font-weight: 200;
+    font-size: 14px;
 }
 .postContainer{
     display: flex;
@@ -36,7 +37,7 @@
 
 .userPostHeader{
     display: flex;
-    padding: 5px 5px;  
+    padding: 7px 5px;  
     align-items: center;
     height: 60px;
 }

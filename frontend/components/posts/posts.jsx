@@ -29,7 +29,7 @@ class Posts extends React.Component {
                     {/* weird font displayed in this placeholder because text is in div not a p */}
                     buttons go here
                 </div>
-                {/* PUT CONDITIONALLY DISPLAYED LIKES p tag here! */}
+                {/* PUT CONDITIONALLY LIKES p tag here! */}
                 <div className="postCaption">
                     <p id="username">{post.user}</p>
                     <p>{post.caption}</p>
