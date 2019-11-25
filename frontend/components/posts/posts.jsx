@@ -16,12 +16,11 @@ class Posts extends React.Component {
     }
     
     render() {
-        // console.log(this.props.posts.posts);
         if (!this.props.posts){
             return null
         }
         
-        let all_posts = this.props.posts.map((post) => (
+        let all_posts = Object.values(this.props.posts).map((post) => (
             <div className="postContainer" key={post.id}>
                 <div className="userPostHeader">
                     <div className="colorBorder">
