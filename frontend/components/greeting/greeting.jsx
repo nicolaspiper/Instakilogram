@@ -3,7 +3,7 @@ import GreetingContainer from "./greeting_container"
 import {Link} from 'react-router-dom';
 import SignUpContainer from "./../session_form/sign_up_form_container";
 import Navbar from "./../navbar/navbar_container";
-import Posts from "./../posts/posts";
+import Posts from "./../posts/posts_container";
 
 
 
@@ -11,23 +11,8 @@ export default class Greeting extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {};
         this.showSplash = this.showSplash.bind(this);
-        this.posts = this.posts.bind(this);
-        this.fetchPosts = this.fetchPosts.bind(this);
-    }
-
-    fetchPosts() {
-
-        $.ajax({
-            url: "/api/posts"
-        }).then(posts => {
-            this.setState({ posts })
-        });
-    }
-
-    componentDidMount(){
-        this.fetchPosts();
+        this.postsComponent = this.postsComponent.bind(this);
     }
 
     showSplash(){
@@ -55,15 +40,16 @@ export default class Greeting extends React.Component {
         )
     }
 
-    posts(){
-        if(!this.state.posts){
-            return " "
-        }
+    postsComponent(){
+        // console.log(this.state.posts)
+        // if(!this.state.posts){
+        //     return <p>"SHIT"</p>
+        // }
         return(
             <div className="greeting-box">
                 <Navbar/>
                 <div className="center-box">
-                    <Posts className="allPosts" posts={this.state.posts}/>
+                    <Posts className="allPosts"/>
                 </div>
             </div>
         )
@@ -72,11 +58,10 @@ export default class Greeting extends React.Component {
     render(){
         return(
             <div>
-                { this.props.currentUser ? this.posts() : this.showSplash()}
+                { this.props.currentUser ? this.postsComponent() : this.showSplash()}
             </div>
         )
     }
 
 }
 
-// export default Greeting;
