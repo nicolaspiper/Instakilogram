@@ -7,10 +7,20 @@ class Posts extends React.Component {
 
     constructor(props) {
         super(props)
+        // console.log(this.props.posts);
+        // console.log(this.props.fetchPosts());
+
+    }
+    componentWillMount(){
+        this.props.fetchPosts();
     }
     
-
     render() {
+        // console.log(this.props.posts.posts);
+        if (!this.props.posts){
+            return null
+        }
+        
         let all_posts = this.props.posts.map((post) => (
             <div className="postContainer" key={post.id}>
                 <div className="userPostHeader">
