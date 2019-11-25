@@ -2,11 +2,6 @@ class Api::PostsController < ApplicationController
   
     def index
         @posts = Post.includes(:user).order(:created_at).first(10) # get the first ten posts on first load
-        @posts.each do |post|
-            puts "=================================="
-            puts post.user.photo
-            puts "=================================="
-        end
         render :index
     end
 
