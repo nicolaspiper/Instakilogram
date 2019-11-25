@@ -18,7 +18,7 @@
     justify-content: space-between;
     max-width: 1000px;
 }
-.navbarContent div{
+.homeLinks + .rightDiv{
     display: flex;
     flex-direction: row;
     /* flex-grow: 1; */
@@ -36,7 +36,7 @@
 #vertDivider{
     border: none;
     background-color: #262626;
-    height: 28px;
+    height: 30px;
     margin: auto 10px;
     width: 1px;
     flex-grow: 0;
@@ -57,10 +57,6 @@
     font-family: 'Pacifico';
 }
 
-.leftyLinks div{
-    /* border: 1px dotted blue; */
-    box-sizing: content-box;
-}
 
 .leftyLinks *{
     text-decoration: none;
@@ -72,9 +68,12 @@
 }
 
 .appName{
+    align-self: center;
     height: auto;
     margin-left: 5px;
     font-size: 18px;
+    display: flex;
+    text-justify: center;
 }
 
 .appName p:hover{
@@ -87,8 +86,41 @@
 
 .rightDiv *{
     margin: auto 8px;
+    display: flex;
+    justify-content: center;
 }
 
 .rightDiv *:hover{
     cursor: pointer;
+}
+
+.spriteDiv{
+    margin: auto 30px;
+    background-image: url('/assets/spritesheet.png');
+    zoom: 0.5;
+    background-repeat: none;
+    width: 50px;
+    height: 50px;
+}
+
+#add{
+    background-position: 475px 150px;
+}
+
+#likes{
+    background-position: 325px 200px;
+}
+
+#profile{
+    background-position: 325px 100px;
+}
+
+#home{
+    background-position: 345px 515px;
+    margin-right: 0px;
+    justify-self: center;
+}
+
+#homelink{
+    display: flex;
 }

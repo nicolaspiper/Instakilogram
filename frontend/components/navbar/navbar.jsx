@@ -15,7 +15,8 @@ class Navbar extends React.Component {
                 <div className="navbarContent">
                     <div className="homeLinks">
                         <div className="leftyLinks">
-                            <Link to="/" ><img src="/assets/Instagramera.png" className="iconImg" alt="instakilogram home" /></Link>
+                            <Link to="/" id="homelink" ><div className="spriteDiv" id="home"></div></Link>
+                            {/* <img src="/assets/Instagramera.png" className="iconImg" alt="instakilogram home" /> */}
                             <div id="vertDivider"></div>
                             <div className="appName">
                                 <Link to="/"><p>Instakilogram</p></Link>
@@ -23,11 +24,14 @@ class Navbar extends React.Component {
                         </div>
                     </div>
                     <div className="rightDiv">
-                        <img src="/assets/Explorerericon.png" className="iconImg" alt="explore"/>
+                        <div className="spriteDiv" id="add"></div>
+                        <div className="spriteDiv" id="likes"></div>
+                        <div className="spriteDiv" id="profile" onClick={this.props.openProfile}></div>
+                        {/* <img src="/assets/Explorerericon.png" className="iconImg" alt="explore"/>
                         <img src="/assets/Heartagram.png" className="iconImg" alt="heart"/>
                         <img src="/assets/Profile.png" className="iconImg" alt="profile" 
                             onClick={this.props.openProfile}
-                            />
+                            /> */}
                     </div>
                 </div>
             </div>
