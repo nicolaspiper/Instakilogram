@@ -17,7 +17,7 @@
     flex-grow: 1;
     width: 616px;
     box-sizing: border-box;
-    border: 1px solid #999999;
+    border: 1px solid rgba(0,0,0,.0975);
     background-color: #ffffff;
     border-radius: 2px;
     margin-top: 25px;
@@ -34,16 +34,23 @@
     max-width: 614px;
     height:auto;
 }
-
-.userPostHeader{
+.header{
     display: flex;
     padding: 7px 5px;  
-    align-items: center;
     height: 60px;
+    justify-content: space-between;
+}
+.header div{
+    align-items: center;
+    display: flex;
 }
 
+.actionIcons div{
+    margin: 5px 10px;
+}
 .actionIcons{
     padding: 5px 5px;
+    display: flex;
 }
 
 .postCaption p:first-child{
@@ -53,6 +60,7 @@
     padding: 5px 5px;
     display: flex;
     flex-direction: row;
+    word-wrap: normal;
 }
 
 .comments{
@@ -82,6 +90,22 @@
     line-height: 18px;
     font-weight: 1000;
 }
+#tripDots{
+    justify-self: flex-end;
+    background-position: 525px 150px;
+    flex-direction: row;
+    align-self: flex-end;
+}
+
+.optionsDots{
+    display: flex;
+    justify-self: flex-end;
+    
+}
+
+#comment{
+    background-position: 120px 262px;
+}
 
 .profileImgMask img{
 /* https://stackoverflow.com/questions/12991351/css-force-image-resize-and-keep-aspect-ratio */
@@ -91,3 +115,4 @@
     height: auto;
 
 }
+
