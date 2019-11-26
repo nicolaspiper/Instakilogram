@@ -7,6 +7,11 @@ class Api::PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        # create failure conditional, if there is a 500 level server error, i.e. someone 
+        # guesses a url they will conditionally channeled certain ways, if not logged in but guessing
+        # they will be prompted to sign up or log in the demoUser to post, if they
+        # are logged in but there is no post at that id, tell them such and that they can create 
+        # a post at this id
         render :show
     end
 
