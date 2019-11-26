@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Post from './post_show';
-import { getPost } from '../../actions/post_actions';
+import { getPost, clearPosts } from '../../actions/post_actions';
 
 
 const msp = (state) => ({
@@ -10,6 +10,7 @@ const msp = (state) => ({
 
 const mdp = (dispatch) => ({
     fetchPost: (id) => dispatch(getPost(id)),
+    clearPosts: () => dispatch(clearPosts())
 })
 
 export default connect(msp, mdp)(Post);
