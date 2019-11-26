@@ -13,6 +13,7 @@ import Modal from './modal/modal'
 import GreetingContainer from './greeting/greeting_container'
 import SignUpFormContainer from './session_form/sign_up_form_container';
 import LogInFormContainer from './session_form/login_form_container';
+import PostContainer from './posts/post_container';
 
 const App = () => (
     <div>
@@ -20,6 +21,7 @@ const App = () => (
         <Switch>
             <AuthRoute path="/login" component={LogInFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
+            <Route exact path='/post/:id' component={PostContainer}/>
             <Route path ="/" component={GreetingContainer} />
         </Switch>
     </div>
