@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Posts from './posts';
-import { getPosts } from '../../actions/post_actions';
+import { getPosts, clearPosts } from '../../actions/post_actions';
 
 const msp = (state) => ({
     currentUser: state.entities.users[state.session.id],
@@ -9,6 +9,7 @@ const msp = (state) => ({
 
 const mdp = (dispatch) => ({
     fetchPosts: () => dispatch(getPosts()),
+    clearPosts: () => dispatch(clearPosts())
 })
 
 export default connect(msp, mdp)(Posts);

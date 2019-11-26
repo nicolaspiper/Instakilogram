@@ -13,6 +13,10 @@ class Posts extends React.Component {
         this.props.fetchPosts();
     }
     
+    componentWillUnmount(){
+        this.props.clearPosts();
+    };
+
     render() {
         if (!this.props.posts){
             return null

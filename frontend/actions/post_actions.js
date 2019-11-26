@@ -2,6 +2,7 @@ import * as PostAPI from './../utils/post_api_util';
 
 export const LOAD_INITIAL_POSTS = "LOAD_INITIAL_POSTS";
 export const SHOW_POST = "SHOW_POST";
+export const CLEAR_POSTS = "CLEAR_POSTS";
 
 export const loadInitialPosts = (posts) => ({
     type: LOAD_INITIAL_POSTS,
@@ -11,6 +12,10 @@ export const loadInitialPosts = (posts) => ({
 export const showPost = (post) => ({
     type: SHOW_POST,
     post
+})
+
+export const clearPosts = () => ({
+    type: CLEAR_POSTS
 })
 
 export const getPosts = () => dispatch =>  (
