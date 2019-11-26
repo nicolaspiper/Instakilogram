@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 class Posts extends React.Component {
 
 
     constructor(props) {
         super(props)
-        // console.log(this.props.posts);
-        // console.log(this.props.fetchPosts());
-
     }
     componentWillMount(){
         this.props.fetchPosts();
@@ -22,13 +20,19 @@ class Posts extends React.Component {
         
         let all_posts = Object.values(this.props.posts).map((post) => (
             <div className="postContainer" key={post.id}>
-                <div className="userPostHeader">
-                    <div className="colorBorder">
-                        <div className="profileImgMask">
-                            <img src={post.userPhoto} ></img>
+                <div className="header">
+                    <div>
+                        <div className="colorBorder">
+                            <div className="profileImgMask">
+                                <img src={post.userPhoto} ></img>
+                            </div>
                         </div>
+                        <p id="username">{post.user}</p>
                     </div>
-                    <p id="username">{post.user}</p>
+                    <div className="optionsDots">
+                        <div className="spriteDiv" id="tripDots">
+                        </div> {/* spriteDiv class is on navbar.css*/}
+                    </div>
                     {/* <p>{User.find_by(post.author_id).username}</p> need to get posts frontend working*/}
                 </div>
                 <div className="postPhoto">
@@ -36,12 +40,15 @@ class Posts extends React.Component {
                 </div>
                 <div className="actionIcons">
                     {/* weird font displayed in this placeholder because text is in div not a p */}
-                    buttons go here
+                    <div className="spriteDiv" id="likes">
+                    </div>
+                    <Link to={`/post/${post.id}`}><div className="spriteDiv" id="comment">
+                    </div>
+                    </Link>
                 </div>
                 {/* PUT CONDITIONALLY LIKES p tag here! */}
                 <div className="postCaption">
-                    <p id="username">{post.user}</p>
-                    <p>{post.caption}</p>
+                    <p> <b id="username">{post.user}</b>  {post.caption}</p>
                 </div>
                 <div className="comments">
                     comments will list
