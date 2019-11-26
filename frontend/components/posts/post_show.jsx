@@ -18,7 +18,6 @@ class Post extends React.Component {
 
     render() {
         if (!this.props.post) {
-            console.log(this.props.match.params.id)
             return null
         }
 

@@ -41,10 +41,6 @@ export default class Greeting extends React.Component {
     }
 
     postsComponent(){
-        // console.log(this.state.posts)
-        // if(!this.state.posts){
-        //     return <p>"SHIT"</p>
-        // }
         return(
             <div className="greeting-box">
                 <Navbar/>
