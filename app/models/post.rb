@@ -10,9 +10,15 @@
 #
 
 class Post < ApplicationRecord
+    validates :author_id, :caption, presence: true
+    
     has_one_attached :photo
     belongs_to :user,
         class_name: "User",
         primary_key: :id,
         foreign_key: :author_id
+    has_many :comments,
+        class_name: "Comment",
+        primary_key: :id,
+        foreign_key: :post_id
 end

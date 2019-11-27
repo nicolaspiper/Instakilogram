@@ -27,6 +27,10 @@ class User < ApplicationRecord
 
     has_one_attached :photo
     has_many :posts
+    has_many :comments,
+        class_name: "Comment",
+        primary_key: :id,
+        foreign_key: :user_id
 
     attr_reader :password
 
