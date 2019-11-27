@@ -62,3 +62,6 @@
     flex-direction: row;
     justify-content: space-around;
 }
+#showbox{
+    justify-content: space-between;
+}

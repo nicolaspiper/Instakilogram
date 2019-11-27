@@ -27,12 +27,13 @@
     justify-content: center;
     box-sizing: border-box;
     display: flex;
-    /* min-height: 300px; */
+    object-fit: cover;
+    max-height: 614px;
 }
 
 .postPhoto img{
     max-width: 614px;
-    height:auto;
+    object-fit: cover;
 }
 .header{
     display: flex;
