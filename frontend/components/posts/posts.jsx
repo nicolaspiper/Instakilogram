@@ -51,6 +51,7 @@ class Posts extends React.Component {
                     </Link>
                 </div>
                 {/* PUT CONDITIONALLY LIKES p tag here! */}
+                
                 <div className="postCaption">
                     <p> <b id="username">{post.user}</b>  {post.caption}</p>
                 </div>

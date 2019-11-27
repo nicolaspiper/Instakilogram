@@ -22,7 +22,7 @@ class Post extends React.Component {
         }
 
         return (
-            <div className="greeting-box">
+            <div className="greeting-box" id="showbox">
                 <Navbar />
                 <div className="showPost-center-box">
                     <div className="showPostContainer" key={this.props.post.id}>
