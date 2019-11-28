@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import datetimeParser from './../../../app/assets/javascripts/datetimeparser.js'
 
 
 class Posts extends React.Component {
@@ -22,7 +22,7 @@ class Posts extends React.Component {
             return null
         }
         
-        let all_posts = Object.values(this.props.posts).map((post) => (
+        let all_posts = Object.values(this.props.posts).map(post => (
             <div className="postContainer" key={post.id}>
                 <div className="header">
                     <div>
@@ -51,12 +51,14 @@ class Posts extends React.Component {
                     </Link>
                 </div>
                 {/* PUT CONDITIONALLY LIKES p tag here! */}
-                
+
                 <div className="postCaption">
                     <p> <b id="username">{post.user}</b>  {post.caption}</p>
                 </div>
                 <div className="comments">
-                    comments will list
+                    {Object.values(post.comments).map(comment => (
+                        <p key={comment.id} className="commentLine"> <b id="username">{comment.commentUser}</b>  {comment.body} <em className="date">{datetimeParser(comment.time)}</em></p>
+                    ))}
                 </div>
             </div>))
         return (

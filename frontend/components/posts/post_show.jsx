@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './../navbar/navbar_container';
-
+import datetimeParser from './../../../app/assets/javascripts/datetimeparser'
 
 class Post extends React.Component {
 
@@ -58,7 +58,9 @@ class Post extends React.Component {
                                     <p> <b id="username">{this.props.post.user}</b>  {this.props.post.caption}</p>
                                 </div>
                                 <div className="comments">
-                                    comments will list
+                                    {Object.values(this.props.post.comments).map(comment => (
+                                        <p key={comment.id} className="commentLine"> <b id="username">{comment.commentUser}</b>  {comment.body} <em className="date">{datetimeParser(comment.time)}</em></p>
+                                    ))}
                                 </div>
                             </div>
                         </div>    

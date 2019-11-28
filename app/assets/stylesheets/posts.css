@@ -117,3 +117,12 @@
 
 }
 
+.date{
+    color: rgba(0,0,0,.0975);
+    font-family: var(--sans-serif);
+    font-size: 12px;
+}
+
+.commentLine{
+    line-height: 22px;
+}
