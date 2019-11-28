@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './../navbar/navbar_container';
-import datetimeParser from './../../../app/assets/javascripts/datetimeparser'
+
 
 class Post extends React.Component {
 
 
     constructor(props) {
-        super(props);
+        super(props)
+        this.datetimeParser = this.datetimeParser.bind(this)
     }
     componentWillMount() {
         this.props.fetchPost(this.props.match.params.id);
@@ -15,6 +16,27 @@ class Post extends React.Component {
     componentWillUnmount(){
         this.props.clearPosts()
     }
+
+    datetimeParser(datetimestr) {
+        // 2019-11-27T01:32:23.023Z
+        let to_month = {
+            "01": "Jan",
+            "02": "Feb",
+            "03": "Mar",
+            "04": "Apr",
+            "05": "May",
+            "06": "Jun",
+            "07": "Jul",
+            "08": "Aug",
+            "09": "Sep",
+            "10": "Oct",
+            "11": "Nov",
+            "12": "Dec"
+        }
+        let month = datetimestr.slice(5, 7)
+        let day = datetimestr.slice(8, 10)
+        return to_month[month] + " " + day
+    };
 
     render() {
         if (!this.props.post) {
@@ -59,7 +81,7 @@ class Post extends React.Component {
                                 </div>
                                 <div className="comments">
                                     {Object.values(this.props.post.comments).map(comment => (
-                                        <p key={comment.id} className="commentLine"> <b id="username">{comment.commentUser}</b>  {comment.body} <em className="date">{datetimeParser(comment.time)}</em></p>
+                                        <p key={comment.id} className="commentLine"> <b id="username">{comment.commentUser}</b>  {comment.body} <em className="date">{this.datetimeParser(comment.time)}</em></p>
                                     ))}
                                 </div>
                             </div>
