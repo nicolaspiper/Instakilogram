@@ -45,22 +45,22 @@ users.each.with_index do |user, i|
 end
 
 posts = [
-{id: 1, caption: "Look again at that dot. That's here. That's home. That's us.", author_id: 7, created_at: Time.now(), updated_at: Time.now()},
-{id: 2, caption: "88, another one.", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
-{id: 3, caption: "I just had an idea, it's as if it fell out of the sky", author_id: 4, created_at: Time.now(), updated_at: Time.now()},
-{id: 4, caption: "The unleashed power of the atom has changed everything except our thinking.", author_id: 6, created_at: Time.now(), updated_at: Time.now()},
-{id: 5, caption: "Bring back the wooly mammoth!", author_id: 10, created_at: Time.now(), updated_at: Time.now()},
-{id: 6, caption: "Mix, mix, stir, stir. One more ingredient and I shall have immortality!", author_id: 8, created_at: Time.now(), updated_at: Time.now()},
-{id: 7, caption: "Invented a process today, felt cute, snapped a pic", author_id: 3, created_at: Time.now(), updated_at: Time.now()},
-{id: 8, caption: "Beer just got a whole lot better", author_id: 9, created_at: Time.now(), updated_at: Time.now()},
-{id: 9, caption: "Come at me Superman, got your Kryptonite right here", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
-{id: 10, caption: "What if I was moving super fast away from this clock, would time slow down for me? Lmk what you think", author_id: 6, created_at: Time.now(), updated_at: Time.now()},
-{id: 11, caption: "Can't believe someone stole my idea for a username 'TH3_M1CR0SC0P3R_F4N4T1C'! No matter, I looked at some pondwater samples today along with some other… fluids.", author_id: 11, created_at: Time.now(), updated_at: Time.now()},
-{id: 12, caption: "84. Discovered a really heavy metal today. I'll name it after my home country", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
-{id: 13, caption: "spontaneous generation is hogwash, fight me.", author_id: 9, created_at: Time.now(), updated_at: Time.now()},
-{id: 14, caption: 'Leib-who?', author_id: 4, created_at: Time.now(), updated_at: Time.now()},
-{id: 15, caption: 'HONK', author_id: 2, created_at: Time.now(), updated_at: Time.now()},
-# {id: 16, caption: '', author_id: 1}
+{caption: "Look again at that dot. That's here. That's home. That's us.", author_id: 7, created_at: Time.now(), updated_at: Time.now()},
+{caption: "88, another one.", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
+{caption: "I just had an idea, it's as if it fell out of the sky", author_id: 4, created_at: Time.now(), updated_at: Time.now()},
+{caption: "The unleashed power of the atom has changed everything except our thinking.", author_id: 6, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Bring back the wooly mammoth!", author_id: 10, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Mix, mix, stir, stir. One more ingredient and I shall have immortality!", author_id: 8, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Invented a process today, felt cute, snapped a pic", author_id: 3, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Beer just got a whole lot better", author_id: 9, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Come at me Superman, got your Kryptonite right here", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
+{caption: "What if I was moving super fast away from this clock, would time slow down for me? Lmk what you think", author_id: 6, created_at: Time.now(), updated_at: Time.now()},
+{caption: "Can't believe someone stole my idea for a username 'TH3_M1CR0SC0P3R_F4N4T1C'! No matter, I looked at some pondwater samples today along with some other… fluids.", author_id: 11, created_at: Time.now(), updated_at: Time.now()},
+{caption: "84. Discovered a really heavy metal today. I'll name it after my home country", author_id: 5, created_at: Time.now(), updated_at: Time.now()},
+{caption: "spontaneous generation is hogwash, fight me.", author_id: 9, created_at: Time.now(), updated_at: Time.now()},
+{caption: 'Leib-who?', author_id: 4, created_at: Time.now(), updated_at: Time.now()},
+{caption: 'HONK', author_id: 2, created_at: Time.now(), updated_at: Time.now()},
+# {caption: '', author_id: 1}
 ]
 posts_photos = [
     {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bigbluedot.jpeg'), filename: 'bluedot'},
