@@ -16,13 +16,14 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new()
+        @post = Post.new({
+        })
 
     end
 
     private
     
     def post_params
-        params.require(:post).permit(:caption)
+        params.require(:post).permit(:caption, :created_at, :updated_at, :user, :photo)
     end
 end
