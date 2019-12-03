@@ -15,7 +15,10 @@ export const fetchPost = (id) => (
 export const uploadPost = (post) => (
     $.ajax({
         method: 'POST',
-        url: `/api/posts`
+        url: `/api/posts`,
+        post,
+        contentType: false,
+        processData: false,
     })
 )
 // export const logout = () => (
