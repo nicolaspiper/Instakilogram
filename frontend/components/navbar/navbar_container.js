@@ -10,6 +10,7 @@ const msp = (state) => ({
 const mdp = (dispatch) => ({
     logout: () => dispatch(logout()),
     openProfile: () => dispatch(openModal("profile")),
+    newPost: () => dispatch(openModal("newPost")),
 })
 
 export default connect(msp, mdp)(Navbar);

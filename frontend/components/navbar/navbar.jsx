@@ -24,7 +24,7 @@ class Navbar extends React.Component {
                         </div>
                     </div>
                     <div className="rightDiv">
-                        <div className="spriteDiv" id="add"></div>
+                        <div className="spriteDiv" id="add" onClick={this.props.newPost}></div>
                         <div className="spriteDiv" id="likes"></div>
                         <div className="spriteDiv" id="profile" onClick={this.props.openProfile}></div>
                         {/* <img src="/assets/Explorerericon.png" className="iconImg" alt="explore"/>
