@@ -16,15 +16,12 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+        puts "I AM HERE 1"
+        puts params
+        puts "I AM HERE 2"
         @post = Post.new(post_params)
         if @post.save
-            if @post.photo.attach({
-                io: open(params[:photo]),
-                filename: params[:photo.name]
-            })
-            else
-                render json: @post.errors.full_messages, status: 424
-            end
+            puts 'success'
         else
             render json: @post.errors.full_messages, status: 424
         end
@@ -34,6 +31,6 @@ class Api::PostsController < ApplicationController
     private
     
     def post_params
-        params.require(:post).permit(:caption, :created_at, :updated_at, :user)
+        params.require(:post).permit(:caption, :created_at, :updated_at, :author_id, :photo)
     end
 end
