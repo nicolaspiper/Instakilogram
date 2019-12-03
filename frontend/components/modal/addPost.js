@@ -24,7 +24,8 @@ class AddPost extends React.Component {
         super(props)
         this.state = {
             newPhoto: null,
-            caption: ""
+            caption: "",
+            photoUrl: null,
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
@@ -46,7 +47,15 @@ class AddPost extends React.Component {
     }
 
     handleFile(e){
-        this.setState({newPhoto: e.currentTarget.files[0]})
+        const file = e.currentTarget.files[0]
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ newPhoto: file, photoUrl: fileReader.result})
+        }
+        if (file){
+            console.log(fileReader.readAsDataURL(file));
+            
+        }
     }
     render(){
         console.log(this.state)
@@ -55,6 +64,8 @@ class AddPost extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="newPhoto" className="postformPic">
                         <div className="imgborder">
+                            {/* <div/> */}
+                            {this.state.photoUrl ? <img className="previewPhoto" src={this.state.photoUrl} /> : <div className="cameraImg" />}
                             <input type="file" id="newPhoto" onChange={this.handleFile}/>
                         </div>
                     </label>
@@ -69,7 +80,7 @@ class AddPost extends React.Component {
                     <label htmlFor="postIt">
                         <div className="profileOption">
                             <input type="submit" id="postIt"/>
-                            Make Post
+                            Post
                         </div>
                     </label>
                 </form>
