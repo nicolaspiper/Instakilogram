@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/ui_actions';
 import Profile from './profile'
-
+import AddPost from './addPost'
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -16,6 +16,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'profile':
             component = <Profile />;
+            break;
+        case 'newPost':
+            component = <AddPost />;
             break;
         default:
             return null;
