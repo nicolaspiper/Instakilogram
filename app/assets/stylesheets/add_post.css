@@ -32,6 +32,28 @@
     border-radius: 15px;
     margin: 15px 15px;
     margin-top: 30px;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.imgborder:hover{
+    cursor: pointer;
+}
+
+.cameraImg{
+    background-image: url(/assets/spritesheet.png);
+    background-position: -50px 263px;
+    zoom: 1.5;
+    align-self: center;
+    width: 50px;
+    min-height: 25px;
+    height: 50px;
+}
+
+.previewPhoto{
+    width: 100%
 }
 
 #newPhoto{
