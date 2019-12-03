@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import datetimeParser from './../../../app/assets/javascripts/datetimeparser.js'
+
 
 
 class Posts extends React.Component {

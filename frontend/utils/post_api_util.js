@@ -12,6 +12,12 @@ export const fetchPost = (id) => (
     })
 )
 
+export const uploadPost = (post) => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/posts`
+    })
+)
 // export const logout = () => (
 //     $.ajax({
 //         method: 'DELETE',
