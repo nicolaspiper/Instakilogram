@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
   
     def index
-        @posts = Post.includes(:user, :comments).order(:created_at).first(10) # get the first ten posts on first load
+        @posts = Post.includes(:user, :comments).order(:created_at)#.first(10) # get the first ten posts on first load
         render :index
     end
 
@@ -16,14 +16,24 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new({
-        })
+        @post = Post.new(post_params)
+        if @post.save
+            if @post.photo.attach({
+                io: open(params[:photo]),
+                filename: params[:photo.name]
+            })
+            else
+                render json: @post.errors.full_messages, status: 424
+            end
+        else
+            render json: @post.errors.full_messages, status: 424
+        end
 
     end
 
     private
     
     def post_params
-        params.require(:post).permit(:caption, :created_at, :updated_at, :user, :photo)
+        params.require(:post).permit(:caption, :created_at, :updated_at, :user)
     end
 end
