@@ -26,6 +26,6 @@ export const getPost = (id) => dispatch =>  (
     PostAPI.fetchPost(id).then((post) => dispatch(showPost(post)))
 );
 
-export const uploadPost = (post) => (
-    PostAPI.uploadPost(post)
+export const uploadPost = (post) => dispatch => (
+    PostAPI.uploadPost(post).then( (res) => console.log(res.message), (res) => console.log(res.responseJSON))
 )
