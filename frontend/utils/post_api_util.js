@@ -16,7 +16,7 @@ export const uploadPost = (post) => (
     $.ajax({
         method: 'POST',
         url: `/api/posts`,
-        post,
+        data: post,
         contentType: false,
         processData: false,
     })

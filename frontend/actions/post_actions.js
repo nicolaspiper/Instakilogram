@@ -1,5 +1,5 @@
 import * as PostAPI from './../utils/post_api_util';
-
+import { closeModal } from './ui_actions';
 export const LOAD_INITIAL_POSTS = "LOAD_INITIAL_POSTS";
 export const SHOW_POST = "SHOW_POST";
 export const CLEAR_POSTS = "CLEAR_POSTS";

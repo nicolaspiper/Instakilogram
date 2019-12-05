@@ -36,7 +36,7 @@ class AddPost extends React.Component {
         const formData = new FormData();
         formData.append('post[caption]', this.state.caption);
         formData.append('post[photo]', this.state.newPhoto);
-        formData.append('post[user]', this.props.posterId);
+        formData.append('post[author_id]', this.props.posterId);
         formData.append('post[created_at]', new Date(1394648309130.185));// weird date to prepare it for the controller
         formData.append('post[updated_at]', new Date(1394648309130.185));// weird date to prepare it for the controller
         this.props.addPost(formData);
@@ -53,18 +53,16 @@ class AddPost extends React.Component {
             this.setState({ newPhoto: file, photoUrl: fileReader.result})
         }
         if (file){
-            console.log(fileReader.readAsDataURL(file));
+            fileReader.readAsDataURL(file);
             
         }
     }
     render(){
-        console.log(this.state)
         return (
             <div className="postform">
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="newPhoto" className="postformPic">
                         <div className="imgborder">
-                            {/* <div/> */}
                             {this.state.photoUrl ? <img className="previewPhoto" src={this.state.photoUrl} /> : <div className="cameraImg" />}
                             <input type="file" id="newPhoto" onChange={this.handleFile}/>
                         </div>
@@ -77,9 +75,16 @@ class AddPost extends React.Component {
                         className="captionText"
                         ></textarea>
                     </div>
+                    {this.props.errors ? <div>
+                        <ul>
+                            {this.props.errors.map((error) => (
+                                <li>{error}</li>    
+                            ))}
+                        </ul>
+                    </div> : null}
                     <label htmlFor="postIt">
                         <div className="profileOption">
-                            <input type="submit" id="postIt"/>
+                            <input type="submit" onClick={this.handleSubmit} id="postIt"/>
                             Post
                         </div>
                     </label>
