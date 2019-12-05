@@ -1,6 +1,9 @@
 class Api::PostsController < ApplicationController
   
     def index
+        # currently pulling up the last updated posts, may work the same if i don't reverse the order of my posts seed generation and order by created at, sounds like
+        # what I was doing before though, while this loads the posts in the right order, if someone edits a post it will end up at the top of the 
+        # feed again
         @posts = Post.includes(:user, :comments).order(:updated_at).reverse_order#.first(10) # get the first ten posts on first load
         render :index
     end
