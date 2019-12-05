@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
   
     def index
-        @posts = Post.includes(:user, :comments).order(:created_at)#.first(10) # get the first ten posts on first load
+        @posts = Post.includes(:user, :comments).order(:updated_at).reverse_order#.first(10) # get the first ten posts on first load
         render :index
     end
 
@@ -21,7 +21,9 @@ class Api::PostsController < ApplicationController
         puts "I AM HERE 2"
         @post = Post.new(post_params)
         if @post.save
-            puts 'success'
+            puts "saved"
+            puts "#{@post.id}"
+            redirect_to "/#/post/#{@post.id}"
         else
             render json: @post.errors.full_messages, status: 424
         end

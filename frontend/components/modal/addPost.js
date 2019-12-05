@@ -37,8 +37,8 @@ class AddPost extends React.Component {
         formData.append('post[caption]', this.state.caption);
         formData.append('post[photo]', this.state.newPhoto);
         formData.append('post[author_id]', this.props.posterId);
-        formData.append('post[created_at]', new Date(1394648309130.185));// weird date to prepare it for the controller
-        formData.append('post[updated_at]', new Date(1394648309130.185));// weird date to prepare it for the controller
+        formData.append('post[created_at]', new Date());// weird date to prepare it for the controller
+        formData.append('post[updated_at]', new Date());// weird date to prepare it for the controller
         this.props.addPost(formData);
     }
 

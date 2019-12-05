@@ -62,6 +62,7 @@ posts = [
 {caption: 'HONK', author_id: 2, created_at: Time.now(), updated_at: Time.now()},
 # {caption: '', author_id: 1}
 ]
+posts.reverse!
 posts_photos = [
     {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/bigbluedot.jpeg'), filename: 'bluedot'},
     {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/radium.jpeg'), filename: 'radium' },
@@ -80,37 +81,37 @@ posts_photos = [
     {io: open('https://instakilogram-dev.s3-us-west-1.amazonaws.com/goose.jpg_large'), filename: 'HONK'}
 ] 
 # # created_at: Time.now(), updated_at: Time.now()
-
+posts_photos.reverse!
 posts.each.with_index do |post, i|
     pos = Post.create!(post)
     pos.photo.attach(posts_photos[i])
 end
 
 comments = [
-    {body: 'We have but one home, we should avoid war at all costs, great point Herr Sagan', user_id: 6, post_id: 1, created_at: Time.now(), updated_at: Time.now()},
-    {body: "I was so narrowminded when it came to calculating the motions of the planets, glad to see how far we've come.", user_id: 4, post_id: 1, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Yes! More materials for me to experiment with in my quest for everlasting life!", user_id: 8, post_id: 2, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Hey, Alchemist, whatever you do don't put this one in your mouth. Can't promise that it is safe...", user_id: 5, post_id: 2, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Danke schoen Herr Newton, we will forever be indebted to your discoveries", user_id: 6, post_id: 3, created_at: Time.now(), updated_at: Time.now()},
-    {body: "I wouldn't be able to see this under a microscope, would I?", user_id: 11, post_id: 4, created_at: Time.now(), updated_at: Time.now()},
-    {body: "But really CRISPR is a cool thing, check it out", user_id: 10, post_id: 5, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Do you have any PPE? I hope you're not drinking those concoctions you make", user_id: 10, post_id: 6, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Of course I am, immortality will not elude my grasp again!", user_id: 8, post_id: 6, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Also, what is PPE?", user_id: 8, post_id: 6, created_at: Time.now(), updated_at: Time.now()},
-    {body: "*facepalm*", user_id: 10, post_id: 6, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Monsieur Haber, your process is revolutionary! You deserve a medal", user_id: 5, post_id: 7, created_at: Time.now(), updated_at: Time.now()},
+    {body: 'We have but one home, we should avoid war at all costs, great point Herr Sagan', user_id: 6, post_id: 15, created_at: Time.now(), updated_at: Time.now()},
+    {body: "I was so narrowminded when it came to calculating the motions of the planets, glad to see how far we've come.", user_id: 4, post_id: 15, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Yes! More materials for me to experiment with in my quest for everlasting life!", user_id: 8, post_id: 14, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Hey, Alchemist, whatever you do don't put this one in your mouth. Can't promise that it is safe...", user_id: 5, post_id: 14, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Danke schoen Herr Newton, we will forever be indebted to your discoveries", user_id: 6, post_id: 13, created_at: Time.now(), updated_at: Time.now()},
+    {body: "I wouldn't be able to see this under a microscope, would I?", user_id: 11, post_id: 12, created_at: Time.now(), updated_at: Time.now()},
+    {body: "But really CRISPR is a cool thing, check it out", user_id: 10, post_id: 11, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Do you have any PPE? I hope you're not drinking those concoctions you make", user_id: 10, post_id: 10, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Of course I am, immortality will not elude my grasp again!", user_id: 8, post_id: 10, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Also, what is PPE?", user_id: 8, post_id: 10, created_at: Time.now(), updated_at: Time.now()},
+    {body: "*facepalm*", user_id: 10, post_id: 10, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Monsieur Haber, your process is revolutionary! You deserve a medal", user_id: 5, post_id: 9, created_at: Time.now(), updated_at: Time.now()},
     {body: "What are you looking at now you username theif? To be fair I hope it does though :D", user_id: 11, post_id: 8, created_at: Time.now(), updated_at: Time.now()},
     {body: "Yeast, they seem to be responsible for fermentation", user_id: 9, post_id: 8, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Nice throwback photo Frau Curie", user_id: 3, post_id: 9, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Can I post this on r/showerthoughts?", user_id: 7, post_id: 10, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Pardonez-moi Monsieur Leeuvenhoek", user_id: 9, post_id: 11, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Apology accepted, would like to see more microscopers on here anyways!", user_id: 11, post_id: 11, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Will I have to travel to Poland to get this new material?", user_id: 8, post_id: 12, created_at: Time.now(), updated_at: Time.now()},
-    {body: "No, like I said, I just named it after my home country, it's found in many different places", user_id: 5, post_id: 12, created_at: Time.now(), updated_at: Time.now()},
-    {body: "The other side of food, learning to preserve the food grown by fertilizer from my process!", user_id: 3, post_id: 13, created_at: Time.now(), updated_at: Time.now()},
-    {body: "Hehehe, sick burn", user_id: 7, post_id: 14, created_at: Time.now(), updated_at: Time.now()},
-    {body: "HONK HONK HONK", user_id: 1, post_id: 15, created_at: Time.now(), updated_at: Time.now()},
-    {body: "*angry goose noises*", user_id: 2, post_id: 15, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Nice throwback photo Frau Curie", user_id: 3, post_id: 7, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Can I post this on r/showerthoughts?", user_id: 7, post_id: 6, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Pardonez-moi Monsieur Leeuvenhoek", user_id: 9, post_id: 5, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Apology accepted, would like to see more microscopers on here anyways!", user_id: 11, post_id: 5, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Will I have to travel to Poland to get this new material?", user_id: 8, post_id: 4, created_at: Time.now(), updated_at: Time.now()},
+    {body: "No, like I said, I just named it after my home country, it's found in many different places", user_id: 5, post_id: 4, created_at: Time.now(), updated_at: Time.now()},
+    {body: "The other side of food, learning to preserve the food grown by fertilizer from my process!", user_id: 3, post_id: 3, created_at: Time.now(), updated_at: Time.now()},
+    {body: "Hehehe, sick burn", user_id: 7, post_id: 2, created_at: Time.now(), updated_at: Time.now()},
+    {body: "HONK HONK HONK", user_id: 1, post_id: 1, created_at: Time.now(), updated_at: Time.now()},
+    {body: "*angry goose noises*", user_id: 2, post_id: 1, created_at: Time.now(), updated_at: Time.now()},
 ]
 
 comments.each do |comment|
