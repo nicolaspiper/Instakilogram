@@ -9,7 +9,11 @@ class Api::PostsController < ApplicationController
     end
 
     def show
-        @post = Post.includes(:user,:comments).find(params[:id])
+        # puts "#{params}"
+        puts "#{@post}"
+        puts "========================="
+        @post ||= Post.includes(:user,:comments).find(params[:id])
+        # puts "GETTING PARAM ID IN SHOW"
         # create failure conditional, if there is a 500 level server error, i.e. someone 
         # guesses a url they will conditionally channeled certain ways, if not logged in but guessing
         # they will be prompted to sign up or log in the demoUser to post, if they
@@ -24,9 +28,11 @@ class Api::PostsController < ApplicationController
         puts "I AM HERE 2"
         @post = Post.new(post_params)
         if @post.save
-            puts "saved"
-            puts "#{@post.id}"
-            redirect_to "/#/post/#{@post.id}"
+            # redirect_to "/#/post/#{@post.id}"
+            # redirect_to "/#/post/#{@post.id}", id: "#{@post.id}"
+            # redirect_to controller: '/post', action: 'show', id: @post.id 
+            render action: "show", id: "#{@post.id}"
+            # render json: @post.id
         else
             render json: @post.errors.full_messages, status: 424
         end
