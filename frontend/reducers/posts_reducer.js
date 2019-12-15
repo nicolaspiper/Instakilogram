@@ -1,9 +1,21 @@
-import { LOAD_INITIAL_POSTS, SHOW_POST, CLEAR_POSTS } from "../actions/post_actions";
+import { LOAD_INITIAL_POSTS, SHOW_POST, CLEAR_POSTS, CLEAR_POST } from "../actions/post_actions";
 
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
+    console.log(state)
     switch (action.type) {
+        case CLEAR_POST:
+            let newState = {...state};
+            delete newState['post'];
+            return Object.assign({},newState)
+            // return Object.assign({},state.map((post)=> {
+            //     if (typeof post === 'number'){
+            //         post
+            //     } else {
+            //         next;
+            //     }
+            // }))
         case CLEAR_POSTS:
             return Object.assign({},{},{})
         case LOAD_INITIAL_POSTS:
