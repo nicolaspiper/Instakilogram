@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Navbar from './../navbar/navbar_container';
 
 
@@ -9,12 +9,13 @@ class Post extends React.Component {
     constructor(props) {
         super(props)
         this.datetimeParser = this.datetimeParser.bind(this)
-    }
-    componentWillMount() {
         this.props.fetchPost(this.props.match.params.id);
     }
+    componentWillMount(){
+    }
     componentWillUnmount(){
-        this.props.clearPosts()
+        // this.props.clearPost()
+        // console.log("I've been unmounted!")
     }
 
     datetimeParser(datetimestr) {
@@ -39,8 +40,18 @@ class Post extends React.Component {
     };
 
     render() {
+
         if (!this.props.post) {
             return null
+        }
+        console.log("====");
+        console.log(this.props.post.id);
+        console.log("====");
+        console.log(this.props.match.params.id);
+        console.log(`does the state and the params match up? ${typeof this.props.post.id} ${typeof this.props.match.params.id}`)
+        if (this.props.post.id != this.props.match.params.id) {
+            console.log('redirecting...')
+            return <Redirect to={`/post/${this.props.post.id}`} />
         }
 
         return (

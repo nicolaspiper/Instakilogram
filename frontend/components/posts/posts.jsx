@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 
@@ -9,13 +9,16 @@ class Posts extends React.Component {
     constructor(props) {
         super(props)
         this.datetimeParser = this.datetimeParser.bind(this)
+        console.log(this.props.posts.length)
+        if (this.props.posts.length === undefined) {
+            this.props.fetchPosts();
+        }
     }
     componentWillMount(){
-        this.props.fetchPosts();
     }
     
     componentWillUnmount(){
-        this.props.clearPosts();
+        // this.props.clearPosts();
     };
 
     datetimeParser(datetimestr) {
@@ -38,10 +41,23 @@ class Posts extends React.Component {
         let day = datetimestr.slice(8, 10)
         return to_month[month] + " " + day
     };
+    // componentDidUpdate(){
+    //     console.log(this.props.posts.post)
+    //     if(this.props.posts.post){
+    //         console.log(this.props.posts.post.id)
+    //         return <Redirect to={`/post/${this.props.posts.post.id}`}/>
+    //     }
+    //     console.log("I ran componentDidUpdate on Posts, but there was no post")
+    // }
+    // just check in render if a show post item exists, if it does, redirect to show component
 
     render() {
         if (!this.props.posts){
             return null
+        }
+        if (this.props.posts.post) {
+            console.log(this.props.posts.post.id)
+            return <Redirect to={`/post/${this.props.posts.post.id}`} />
         }
         
         let all_posts = Object.values(this.props.posts).map(post => (
