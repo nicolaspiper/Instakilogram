@@ -7,6 +7,11 @@ class Navbar extends React.Component {
     
     constructor(props) {
         super(props)
+        this.homeHandler = this.homeHandler.bind(this);
+    }
+
+    homeHandler(){
+        this.props.returnHome()
     }
 
     render() {
@@ -15,11 +20,11 @@ class Navbar extends React.Component {
                 <div className="navbarContent">
                     <div className="homeLinks">
                         <div className="leftyLinks">
-                            <Link to="/" id="homelink" ><div className="spriteDiv" id="home"></div></Link>
+                            <Link to="/" id="homelink" onClick={this.homeHandler}><div className="spriteDiv" id="home"></div></Link>
                             {/* <img src="/assets/Instagramera.png" className="iconImg" alt="instakilogram home" /> */}
                             <div id="vertDivider"></div>
                             <div className="appName">
-                                <Link to="/"><p>Instakilogram</p></Link>
+                                <Link to="/" onClick={this.homeHandler}><p>Instakilogram</p></Link>
                             </div>
                         </div>
                     </div>
