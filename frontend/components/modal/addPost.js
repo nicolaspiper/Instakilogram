@@ -12,7 +12,7 @@ const msp = state => ({
 const mdp = dispatch => {
     return {
         closeModal: () => dispatch(closeModal()),
-        addPost: (post) => { dispatch(uploadPost(post)); dispatch(closeModal()); },//logout()(dispatch)
+        addPost: (post) => { dispatch(uploadPost(post)); },//logout()(dispatch)
         // reorganized modal closing, need to dispatch the called method closeModal
         // The closeModal on line 14 is the imported closeModal from the actions
 
@@ -31,7 +31,10 @@ class AddPost extends React.Component {
         this.handleFile = this.handleFile.bind(this)
         this.handleInput = this.handleInput.bind(this)
     }
+
     handleSubmit(e){
+        // console.log("==================")
+        // console.log(this.props.state)
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[caption]', this.state.caption);
@@ -40,6 +43,8 @@ class AddPost extends React.Component {
         formData.append('post[created_at]', new Date());// weird date to prepare it for the controller
         formData.append('post[updated_at]', new Date());// weird date to prepare it for the controller
         this.props.addPost(formData);
+        // console.log("==================")
+        // console.log(this.props.state)
     }
 
     handleInput(e){
@@ -57,6 +62,7 @@ class AddPost extends React.Component {
             
         }
     }
+
     render(){
         return (
             <div className="postform">
