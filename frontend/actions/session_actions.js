@@ -1,4 +1,5 @@
 import * as SessionAPI from './../utils/session_api_util';
+import { clearPost } from './post_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT = "LOGOUT";
@@ -39,5 +40,5 @@ export const login = (user) => dispatch => (
 );
 
 export const logout = () => dispatch => (
-    SessionAPI.logout().then( user => dispatch(logoutCurrentUser()))
+    SessionAPI.logout().then( () => {dispatch(clearPost()); dispatch(logoutCurrentUser())})
 );

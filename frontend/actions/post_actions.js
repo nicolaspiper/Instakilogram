@@ -3,6 +3,7 @@ import { closeModal } from './ui_actions';
 export const LOAD_INITIAL_POSTS = "LOAD_INITIAL_POSTS";
 export const SHOW_POST = "SHOW_POST";
 export const CLEAR_POSTS = "CLEAR_POSTS";
+export const CLEAR_POST = "CLEAR_POST";
 
 export const loadInitialPosts = (posts) => ({
     type: LOAD_INITIAL_POSTS,
@@ -18,6 +19,10 @@ export const clearPosts = () => ({
     type: CLEAR_POSTS
 })
 
+export const clearPost = () => ({
+    type: CLEAR_POST
+})
+
 export const getPosts = () => dispatch =>  (
     PostAPI.fetchPosts().then((posts) => dispatch(loadInitialPosts(posts)))
 );
@@ -27,5 +32,5 @@ export const getPost = (id) => dispatch =>  (
 );
 
 export const uploadPost = (post) => dispatch => (
-    PostAPI.uploadPost(post).then( (res) => console.log(res.message), (res) => console.log(res.responseJSON))
+    PostAPI.uploadPost(post).then((post) => { dispatch(closeModal()); dispatch(clearPosts()); dispatch(getPost(post.id));}, (res) => console.log(res.responseJSON))
 )
