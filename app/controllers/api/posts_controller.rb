@@ -28,11 +28,7 @@ class Api::PostsController < ApplicationController
         puts "I AM HERE 2"
         @post = Post.new(post_params)
         if @post.save
-            # redirect_to "/#/post/#{@post.id}"
-            # redirect_to "/#/post/#{@post.id}", id: "#{@post.id}"
-            # redirect_to controller: '/post', action: 'show', id: @post.id 
             render action: "show", id: "#{@post.id}"
-            # render json: @post.id
         else
             render json: @post.errors.full_messages, status: 424
         end
