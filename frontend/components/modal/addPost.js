@@ -6,7 +6,8 @@ import { uploadPost } from '../../actions/post_actions';
 
 const msp = state => ({
     currentUser: state.entities.users[state.session.id],
-    posterId: state.session.id
+    posterId: state.session.id,
+    errors: state.errors.posts
 })
 
 const mdp = dispatch => {
@@ -23,13 +24,17 @@ class AddPost extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            errors: [],
             newPhoto: null,
             caption: "",
             photoUrl: null,
+            photoError: "Posts must have a photo"
         }
+        this.submittable = this.submittable.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleInput = this.handleInput.bind(this)
+        this.addError = this.addError.bind(this)
     }
 
     handleSubmit(e){
@@ -42,9 +47,25 @@ class AddPost extends React.Component {
         formData.append('post[author_id]', this.props.posterId);
         formData.append('post[created_at]', new Date());// weird date to prepare it for the controller
         formData.append('post[updated_at]', new Date());// weird date to prepare it for the controller
-        this.props.addPost(formData);
+        if (this.state.newPhoto === null || this.state.caption === "") {
+            if (this.state.newPhoto === null) {
+                this.setState({ errors: ["Posts must have a photo"] })
+                if (this.state.caption === ""){
+                    this.setState( {errors: ["Posts must have a caption"]})
+                }
+            }else {
+                this.setState({errors: ["Posts must have a caption"]})
+            }
+
+        } else {
+            this.props.addPost(formData);
+        }
         // console.log("==================")
         // console.log(this.props.state)
+    }
+
+    addError(type){
+
     }
 
     handleInput(e){
@@ -63,10 +84,16 @@ class AddPost extends React.Component {
         }
     }
 
+    submittable(e){
+        if (this.state.newPhoto === null || this.state.caption === ""){
+            console.log(e)
+        }
+    }
+
     render(){
         return (
             <div className="postform">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} onChange={this.submittable}>
                     <label htmlFor="newPhoto" className="postformPic">
                         <div className="imgborder">
                             {this.state.photoUrl ? <img className="previewPhoto" src={this.state.photoUrl} /> : <div className="cameraImg" />}
@@ -81,7 +108,7 @@ class AddPost extends React.Component {
                         className="captionText"
                         ></textarea>
                     </div>
-                    {this.props.errors ? <div>
+                    {this.state.errors ? <div>
                         <ul>
                             {this.props.errors.map((error) => (
                                 <li>{error}</li>    
@@ -90,7 +117,7 @@ class AddPost extends React.Component {
                     </div> : null}
                     <label htmlFor="postIt">
                         <div className="profileOption">
-                            <input type="submit" onClick={this.handleSubmit} id="postIt"/>
+                            <input type="submit" onClick={this.handleSubmit} id="postIt" />
                             Post
                         </div>
                     </label>
