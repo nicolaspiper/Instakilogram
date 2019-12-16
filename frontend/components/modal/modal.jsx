@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/ui_actions';
+import { clearPostsErrors } from '../../actions/post_actions';
 import Profile from './profile'
 import AddPost from './addPost'
 
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => {dispatch(closeModal()); dispatch(clearPostsErrors())},
     };
 };
 
