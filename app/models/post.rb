@@ -10,9 +10,9 @@
 #
 
 class Post < ApplicationRecord
-    validates :author_id, :caption, presence: true
-    
+    validates :author_id, :caption, :photo, presence: true
     has_one_attached :photo
+    
     belongs_to :user,
         class_name: "User",
         primary_key: :id,
