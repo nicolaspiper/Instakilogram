@@ -23,16 +23,12 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        puts "I AM HERE 1"
-        puts params
-        puts "I AM HERE 2"
         @post = Post.new(post_params)
         if @post.save
             render action: "show", id: "#{@post.id}"
         else
             render json: @post.errors.full_messages, status: 424
         end
-
     end
 
     private
